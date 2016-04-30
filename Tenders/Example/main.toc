@@ -1,0 +1,50 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{1}
+\contentsline {paragraph}{\indent }{1}
+\contentsline {section}{\numberline {2}Vision}{1}
+\contentsline {paragraph}{\indent }{1}
+\contentsline {section}{\numberline {3}Background}{1}
+\contentsline {paragraph}{\indent }{1}
+\contentsline {section}{\numberline {4}Architecture Requirements}{1}
+\contentsline {subsection}{\numberline {4.1}Access channel requirements}{1}
+\contentsline {paragraph}{\indent }{1}
+\contentsline {subsection}{\numberline {4.2}Quality requirements}{2}
+\contentsline {paragraph}{\indent }{2}
+\contentsline {subsection}{\numberline {4.3}Integration requirements}{2}
+\contentsline {paragraph}{\indent }{2}
+\contentsline {paragraph}{\indent }{2}
+\contentsline {paragraph}{\indent }{2}
+\contentsline {subsection}{\numberline {4.4}Architecture constraints}{2}
+\contentsline {paragraph}{\indent }{2}
+\contentsline {section}{\numberline {5}Functional requirements and application design}{3}
+\contentsline {subsection}{\numberline {5.1}Use case prioritization}{3}
+\contentsline {paragraph}{\indent }{3}
+\contentsline {paragraph}{\indent }{3}
+\contentsline {paragraph}{\indent }{3}
+\contentsline {subsection}{\numberline {5.2}Use case/Services contracts}{4}
+\contentsline {paragraph}{\indent }{4}
+\contentsline {paragraph}{\indent }{5}
+\contentsline {subsection}{\numberline {5.3}Required functionality}{7}
+\contentsline {subsection}{\numberline {5.4}Process specifications}{9}
+\contentsline {subsection}{\numberline {5.5}Domain Model}{11}
+\contentsline {section}{\numberline {6}Open Issues}{11}
+\contentsline {section}{\numberline {7}Software Architecture Documentation}{11}
+\contentsline {subsection}{\numberline {7.1}Architecture requirements}{11}
+\contentsline {paragraph}{\indent }{11}
+\contentsline {subsection}{\numberline {7.2}Architectural scope}{11}
+\contentsline {paragraph}{\indent }{11}
+\contentsline {subsection}{\numberline {7.3}Quality requirements}{11}
+\contentsline {paragraph}{\indent }{11}
+\contentsline {subsection}{\numberline {7.4}Integration and access channel requirements}{12}
+\contentsline {paragraph}{\indent }{12}
+\contentsline {subsection}{\numberline {7.5}Architecture constraints}{12}
+\contentsline {paragraph}{\indent }{12}
+\contentsline {section}{\numberline {8}Functional requirements and application design}{12}
+\contentsline {subsection}{\numberline {8.1}....}{12}
+\contentsline {paragraph}{\indent }{12}
+\contentsline {section}{\numberline {9}Architectural patterns or styles}{12}
+\contentsline {section}{\numberline {10}Architectural tactics or strategies}{12}
+\contentsline {section}{\numberline {11}Use of reference architectures and frameworks}{12}
+\contentsline {section}{\numberline {12}Access and integration channels}{12}
+\contentsline {section}{\numberline {13}Technologies}{12}
+\contentsline {paragraph}{\indent }{12}
