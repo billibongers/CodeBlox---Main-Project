@@ -31,8 +31,8 @@
 \contentsline {subsubsection}{\numberline {1.5.5}My motivation for wanting to do this project}{10}{subsubsection.1.5.5}
 \contentsline {section}{\numberline {2}Project Execution}{11}{section.2}
 \contentsline {subsection}{\numberline {2.1}Development Methodology}{11}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Developer/Client Communication}{12}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Technical Challenges}{13}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Technology Stack}{14}{subsection.2.4}
-\contentsline {subsection}{\numberline {2.5}Deliverables}{15}{subsection.2.5}
-\contentsline {section}{\numberline {3}Conclusion}{16}{section.3}
+\contentsline {subsection}{\numberline {2.2}Developer/Client Communication}{11}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Technical Challenges}{11}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Technology Stack}{11}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Deliverables}{11}{subsection.2.5}
+\contentsline {section}{\numberline {3}Conclusion}{12}{section.3}
