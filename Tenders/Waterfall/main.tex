@@ -1,319 +1,174 @@
-\documentclass[english]{article}
+\documentclass[a4paper,12pt]{article}
+\addtolength{\oddsidemargin}{-1.cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\topmargin}{-3cm}
+\addtolength{\textheight}{3.5cm}
+\makeindex
 
-\usepackage{graphicx}
-\usepackage{grffile}
-\usepackage[T1]{fontenc}
-\usepackage{babel}
 
-\author{
-	Maree, Armand\\
-	\texttt{12017800}
-	\and
-	Watt, Brenton\\
-	\texttt{14032644}
-	\and
-	Meyers, Charl\\
-	\texttt{14024633}
-	\and
-	Tom, Elton\\
-	\texttt{13325095}
-	\and
-	Tswene, Kamogelo\\
-	\texttt{12163555}
-	\and
-	Molefe, Keletso\\
-	\texttt{14222583}
-	\and
-	Spazzoli, Lorenzo\\
-	\texttt{13304862}
+\usepackage[pdftex]{graphicx}
+\usepackage{makeidx}
+\usepackage{float}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
 }
 
-\title{Software Requirements Specification\\
-	and\\
-	Technology Neutral Process Design\\
-	\large Name of project\\
-	\small Version: 1.0}
-\date{\today}
-\graphicspath{{Pictures/}}
+
+
+% define the title
+\author{CodeBlox}
+\title{Tender}
 \begin{document}
-	\maketitle
-	\begin{figure}[!t]
-		\includegraphics[width=\linewidth]{up_logo.png}
-	\end{figure}
-	\pagenumbering{gobble}
-	\newpage
+	\setlength{\parskip}{6pt}
+	
+	% generates the title
+	\begin{titlepage}
+		\begin{center}
+			\includegraphics[width=1\textwidth]{./Pictures/up_logo.png}\\[1.5cm] 
+			\textsc{\LARGE Department of Computer Science} \\ [.5cm]
+			\textsc{\Large Tender} \\ [.5cm]
+			\textsc{\Large Project: Waterfall} \\ [.5cm]
+			\line(1,0){450}\\[.5cm]
+			\huge{\bfseries Client: Retro Rabbit}\\
+			\line(1,0){450}\\[.5cm]
+			\textsc{\LARGE Team: CodeBlox}\\ [0.5cm]
+			
+			
+			\textsc{\large Tshepo Malesela (Bsc: Computer Science)}\\
+			\textsc{\large Lethabo Mogase (Bsc: Computer Science)}\\
+			\textsc{\large Lorenzo Spazzoli (Bsc: Computer Science)}\\
+			\textsc{\large Bilal Muhammad (BIS: Multimedia)}\\
+			\textsc{\large Dirk de Klerk (BIS: Multimedia)}\\ [3.9cm]
+			
+			\large\today
+		\end{center}
+	\end{titlepage}
+	
 	\tableofcontents
+	\thispagestyle{empty}
+	\footnotesize
+	\normalsize
+	
+	
+	
+	
 	\newpage
-	\pagenumbering{arabic}
+	\section{The Team}
 	
-	\section{Introduction}
-		\paragraph\indent
-			In this document it would be specified how a system would be developed for the department of computer science at the University of Pretoria in order for them to replace their current, not so efficient Microsoft Office Excel spreadsheet, system with a more concurrent and reliable option.
+	\includegraphics[width=1\textwidth]{./Pictures/the_group.jpg}\\
+	
+	{\noindent}Each team member possesses a wide variety of skill sets and characteristics that will ultimately contribute to the success of this project. All of our members work well together and are diligent in their work. We as a team take deadlines rather seriously and strive to deliver high quality work well before final submission dates.  
+	
+		\newpage
+		\subsection{Tshepo Malesela}
+		\includegraphics[width=1\textwidth]{./Pictures/Tshepo.jpeg}\\
+			\subsubsection{Interests}
+			As a computer science student, my interests have changed over the past three years. Ive always had a profound deep interest in computing, I had no one to introduce me to programming as there was no one at home who worked in such an industry or knew anything about it. A lot of interests have changed over the past three years but my love for discovery and knowledge hasn't.
+			
+			\subsubsection{Technical Skills}
+			I only started my computer learning properly in  my first year, it was difficult to adjust to so much information being thrown at me but over some time I began enjoying it, I gained skills in Object Oriented languages such as  as C++, C, Java, scripting languages such as javascript and php, and lastly some special-purpose languages such as php. I understand these languages well, studying computer science mens you also need to do more than just school work, so I started reading books and writing programs in my spare time.
+			
+			\subsubsection{Past Experiences}
+			For one of our courses (Software Engineering), we where introduced to so many technologies and also had to use them to complete a project. I believe the knowledge we were introduced to will aid me in adding valuable input to this project.
+			
+			\subsubsection{Non-technical Strengths}
+			I am open to new things, I love experiencing things I'm not familiar with as well. I'm also a very fair person. I am also disciplined. I communicate well with others and this wil hep because I am working in a group.
+			\subsubsection{My motivation for wanting to do this project}
+			I have a very strong and passionate interest for technology. I really enjoy finding out how different technologies works and picture how I can use it or  how it is used in the real world. I also enjoy making things work better. I know that I will be fully dedicated to this project because I interests me in the deepest way, I really believe that my group and I will enjoy developing this for you and I have no doubt that it will be done to the greatest of our abilities.  
+		
+		\newpage
+		\subsection{Lethabo Mogase}
+		\includegraphics[width=1\textwidth]{./Pictures/the_group.jpg}\\
+			\subsubsection{Interests}
+			
+			\subsubsection{Technical Skills}
+			
+			\subsubsection{Past Experiences}
+			
+			\subsubsection{Non-technical Strengths}
+			
+			\subsubsection{My motivation for wanting to do this project}
+		
+		\newpage
+		\subsection{Lorenzo Daniele Spazzoli}
+		\includegraphics[width=1\textwidth]{./Pictures/lorenzo.jpg}\\
+			\subsubsection{Interests}
+			I started learning to program in 2010 at the school I attended.I love to program and I love the feeling of creating something from nothing and seeing how hard work can pay off to create the most beautiful programs.I have had an interest in hardware since 2007 and have created many small systems using raspberry pi's. When im not at my computer I can be found with my guitars.  
+			\subsubsection{Technical Skills}
+			I have been working with raspberry pi's and arduinos for a few years now. Currently I teach arduino training at the university of Pretoria maker-space.As a Computer Scientist in training I know many programing languages. As a hardware enthusiast i can debug and fix almost all hardware problems that we may experience
+			\subsubsection{Past Experiences}
+			In December 2014 I was an intern at a South African start up known as LEPSTA, there i learned many aspects of software engineering and how to work in a team to create a working scalable project
+			\subsubsection{Non-technical Strengths}
+			I am good at Motivating others,a Good Leader, a Hard Worker, good at  Public Speaking and willing to learn  			
+			\subsubsection{My motivation for wanting to do this project}
+			I have found that my biggest interests in computers is where hardware and software meet and this projects combines the two in a way I have dreamed of since I got my first raspberry pi in 2011.This project contains a lot of potential and with the correct team working on it much of that potential will be achieved.
+		
+		\newpage
+		\subsection{Bilal Muhammad}
+		\includegraphics[scale=0.2]{./Pictures/bilal.jpg}\\
+			\subsubsection{Interests}
+			I have always been passionate about programming and creating innovative technology that has not been seen before. I enjoy playing cricket, singing and cooking. But most of all I like experimenting with different viruses and finding ways to break code.
+			\subsubsection{Technical Skills}
+			I am equipped with the knowledge of the following languages and technologies - C++, Java (EE), PHP, JavaScript, HTML and CSS, Assembly x64 and MySql/PostGres.
+			\subsubsection{Past Experiences}
+			I am currently working for the CS department as a tutor for a C++ module, where I create assignments and memos. I was also part of the Integration(High level) team for the Mini Project that we successfully completed this year. I am also currently doing a networking course which I think will be helpful for this project  
+			\subsubsection{Non-technical Strengths}
+			I have always been a strong candidate for leadership positions, mainly because I am understanding and can find reasonable solutions easily. My communication skills are solid which makes me a strong team player.
+			\subsubsection{My motivation for wanting to do this project}
+			This is my passion - creating innovative technology. "The difference between the impossible and the possible lies in a person's determination."
+		
+		\newpage
+		\subsection{Dirk de Klerk}
+		\includegraphics[scale=0.8]{./Pictures/dirk.jpg}\\
+			\subsubsection{Interests}
+			I have a great fondness for music and practice the electric guitar when I get the chance. I also enjoy exercise, cooking, and spending time with family and friends.
+			\subsubsection{Technical Skills}
+			I consider myself to be a descent programmer, I also have an eye for aesthetic design. Languages include: Java, C++, Javascript, PHP, Assembler64, XML, SQL, and HTML. 
+			\subsubsection{Past Experiences}
+			I gained some experience during the mini-project of Software Engineering, where I was part of the integration team. This gave me good exposure to the Java ecosystem as well as a basic understanding of how layered systems work.
+			\subsubsection{Non-technical Strengths}
+			I am a very ambitious person, that works very diligently, paying close attention to details. I also consider myself to be a natural leader and work well in teams. 
+			\subsubsection{My motivation for wanting to do this project}
+			My main interest in this particular project, is the technologies that I will get to work with. I am always looking to challenge myself and discover new ideas.
+	\newpage
+	\section{Project Execution}
+	
+	\subsection{Development Methodology}  
+	
+	The Methodology that will be used in this project is the Agile Development Process. We as a group feel like this methodology will be the most failure and fault proof way to go. In this methodology, we intend to follow the Spiral process because in this way we can adopt elements from other process models such as waterfall, incremental and evolutionary prototyping.
 
-	\section{Vision}
-		\paragraph\indent
-			The client requires a system that would allow them to retrieve and submit meta-data about academic papers published by the department of computer science at the University of Pretoria. Certain users would be able to create new papers and the project leader would then be able to control certain properties of the project, like the current progress of the paper. It should also have a web interface where changes can be made and also an Android app.
+	{\noindent}As a group we decided on the spiral process model because in this project decisions will be made on how to implement the functionality and architecture. With the spiral process model we will choose the safest options that will yield the best results. There is high risk analysis with this process model, and it is the preferred choice for many large and mission critical projects, therefore it will suit our project well.
 
-	\section{Background}
-		\paragraph\indent
-			 What lead to the project is the fact that that the client is facing a problem with the current system they are using.  The spreadsheet which does fulfill its task of storing details about user's publications, does not have a user friendly interface, and does not allow researchers to see any changes made to the system immediately, it is also not a concurrent system and is deemed less reliable.  The client wants a system that would improve the manner the users would be able to view their submissions and be able to modify the system to their liking, with changes immediately visible to researchers. Another aspect which lead to the development of a new system which would simplify the collaboration between the University of Pretoria users and users from other universities, is that instead of having a system which is local; a web interface could be used which is more accessible. The lack of ability to easily access previously entered user information data such as one’s username or contact details also was a factor that lead to this project, as it would be more convenient and efficient to have to have an interface that would for example have a drop down list of all the user information data on the system.
+	{\noindent}The spiral process model also has great features such as the ability to add extra functionality at a later stage in the project. This will probably be the case as the project progresses.
 
 	
-	\section{Architecture Requirements}
-		\subsection{Access channel requirements}
-			\paragraph\indent
-				The system requires 2 interfaces:
-			\begin{list}{$\bullet$}{\leftmargin=1.5cm \itemindent=0em}
-				\item Web interface
-				\item Android app (Could also be a mobile website)
-			\end{list}
-
-		\subsection{Quality requirements}
-			\paragraph\indent
-				The following quality aspects needs to be addressed:
-			\begin{list}{$\bullet$}{\leftmargin=1.5cm \itemindent=0em}
-				\item \textbf{Scalability:} Less a 100 users will use the system.
-				\item \textbf{Security:} Passwords will be hashed with the SHA512 hashing algorithm.
-				\item \textbf{Reliability:} An automatic partial dump backup will be done everyday at 03:00 and each back up will be kept for a week. On top of this a full dump will be done every 3 days and will be kept for 2 weeks. Alternatively the backup will be done by an external program. 
-				\item \textbf{Audibility:} Every change should be logged and the person responsible for that log will be recorded. This will allow the administrators to track which users change what.
-				\item \textbf{Maintainability:} Data that is deleted will only be moved to another database that might be a little slower. This will help alleviate some pressure off the main database.
-				\item \textbf{Cost:} The total hours is estimated to be 120 at a cost of R500 per hour.
-			\end{list}
-			
-		\subsection{Integration requirements}
-			\paragraph\indent
-				The system should allow universities to connect to each other using an API. This would allow them to collaborate on projects and also to track the papers that are being written. The Android app should also be able to connect to the server via the API.
-			
-			\paragraph\indent
-				The protocol that will be used to transfer the data between the server and the clients will be the Hyper Text Transfer Protocol Secure (HTTPS). And the third parties that integrate with the system will access it either through the web interface, the mobile app or the provided API.
-			
-			\paragraph\indent
-				Some quality requirements that have to be considered are:
-			\begin{list}{$\bullet$}{\leftmargin=1.5cm \itemindent=0em}
-				\item \textbf{Security:} The data that is sent over the internet should be encrypted and it has been decided to use the Secure Socket Layer (SSL) encryption algorithm.
-				\item \textbf{Reliability:} The reliability of the transfer of the data is dependent on the reliability of the internet connection.
-			\end{list}
-			
-		\subsection{Architecture constraints}
-			\paragraph\indent
-			There are currently no architecture constraints that the client mentioned.
-			
-
-	\section{Functional requirements and application design}
-		\subsection{Use case prioritization}
-			\paragraph\indent
-			\textbf{Critical:}
-				\begin{list}{$\bullet$}{\leftmargin=1.5cm \itemindent=0em}
-					\item There must be some web hosting server in order to be able to host a web interface, this interface will be the main access channel to the system as it makes it easier to access the system on a computer or non-Android device. If there is no web-server then there will be no web interface that can be accessed from research groups all over the country. This defeats the whole purpose of the system.
-					\item The web interface needs to be accessible from the Internet preferably so that other research groups outside the University are able to access the system.
-					\item The system needs to be able to save data in some way. If there is no possible way to store data then the system might as well not exist, because the purpose of the system is to store meta data about research papers.							
-				\end{list}
-			\paragraph\indent
-			\textbf{Important:}
-			\begin{list}{$\bullet$}{\leftmargin=1.5cm \itemindent=0em}				
-				\item Users must be able to download a bibliography of papers released in a selected period.
-				\item An Android app must be available that can access the system to make it easier to access the system on the go.			
-				\item Users must create their user profile manually and will not be able to link the system with a web service in order to create their profile.
-				\item No item should ever be deleted in the system. Everything is kept. Old unaccessed data may be archived but never deleted. There needs to be some sort of recovery or backup system that enables a user to restore accidently deleted data.
-				\item The system must be able to handle a max of at least 50 concurrent users as there is a possiblility that at least 50 users may access the system all at once. There will also be an estimate of at least a 1000 users. The system must be able to handle that amount of users.
-			\end{list}
-			\paragraph\indent
-			\textbf{Nice-to-have:}
-			\begin{list}{$\bullet$}{\leftmargin=1.5cm \itemindent=0em}
-				\item The system must be lightweight.
-				\item The system must show the completion of a paper in percentage that a user specifies after editing the paper.
-				\item The system may link with Google Calender to synchronise due dates and alerts for the paper a user is busy working on.
-				\item The web interface can be designed to work on mobile phones for those who want to access the system on the go but do not have an Android device.
-			\end{list}
-		
-		\subsection{Use case/Services contracts}
-			\paragraph\indent
-			\begin{list}{$\bullet$}{\leftmargin=1.5cm \itemindent=0em}
-				\item\textbf{Use Case:} Add a paper.
-				
-				\textbf{Primary Actor:} Registered author or HOD.
-				
-				\textbf{Brief:} Only an author or head of department can add new papers.
-				
-				\textbf{Postconditions:}
-				\begin{itemize}
-					\item The article is saved to the database.
-					\item All authors are notified of their new paper.
-					\item The changes are logged.
-					\item Paper is displayed.
-				\end{itemize}
-				
-				\textbf{Triggers:} The user invokes the Add New Paper request.
-				
-				\textbf{Basic flow:}
-				\begin{enumerate}
-					\item Present the actor with a new paper form.
-					\item Actor fill in the form and clicks submit.
-					\item The data is sent to the server and added to the database and logs the event.
-					\item Actor is presented with a success message.
-					\item Paper is presented to the actor.
-					\item Authors are notified.
-				\end{enumerate}
-				
-				\item\textbf{Use Case:} Editing a paper.
-				
-				\textbf{Primary Actor:} Author of paper or HOD.
-				
-				\textbf{Brief:} Only an author involved with the paper or head of department can edit the paper.
-				
-				\textbf{Preconditions:}
-					\begin{itemize}
-						\item Author is presented with the paper in edit mode.
-					\end{itemize}
-				\newpage
-				\textbf{Postconditions:}
-					\begin{itemize}
-						\item The article is saved to the database.
-						\item All authors are notified of the changes.
-						\item The changes are logged.
-						\item Paper is displayed.
-					\end{itemize}
-					
-				\textbf{Triggers:} The user invokes the Edit Paper request.
-				
-				\textbf{Basic flow:}
-					\begin{enumerate}
-						\item Present the actor with the paper in edit mode.
-						\item Actor makes all desired changes and clicks submit.
-						\item The data is sent to the server and added to the database and logs the event.
-						\item Actor is presented with a success message.
-						\item Paper is presented to the actor.
-						\item Authors are notified.
-					\end{enumerate}
-					
-					\item\textbf{Use Case:} Viewing a paper.
-					
-					\textbf{Primary Actor:} Author of paper or HOD.
-					
-					\textbf{Brief:} Only an author involved with the paper or head of department can view the paper.
-					
-					\textbf{Preconditions:}
-					\begin{itemize}
-						\item Author is presented with the paper in read-only mode.
-					\end{itemize}
-					
-					\textbf{Triggers:} The user invokes the View Paper request.
-					
-					\textbf{Basic flow:}
-					\begin{enumerate}
-						\item Present the actor with the paper in read-only mode.
-						\item When the actor is done viewing they simply navigate away. No changes or events has to be logged.
-					\end{enumerate}
-			\end{list}
-			\paragraph\indent
-			\textbf{Request and Results Data Structures:}
-				See figure 1.
-				\begin{figure}
-					\includegraphics[width=\linewidth]{5.2.png}
-					\caption{UML diagram for Request and Results Data Structure.}
-				\end{figure}
-				\newpage
-		\subsection{Required functionality}
-			\begin{itemize}
-				\item	Add a paper Use case: See figure 2
-				\begin{figure}[h]
-					\includegraphics[width=\linewidth]{Add A Paper Use Case}
-					\caption{Use case diagram for adding a paper}				
-				\end{figure}
-				\item   Edit a paper Use case: See figure 3
-				\begin{figure}[h]
-					\includegraphics[width=\linewidth]{Edit a Paper Use Case}
-					\caption{Use case diagram for editing a paper}				
-				\end{figure}
-				\item   View a paper Use case: See figure 4												
-			\end{itemize}						
-			\begin{figure}[h]
-				\includegraphics[width=\linewidth]{View a paper Use Case}
-				\caption{Use case diagram for viewing a paper}
-			\end{figure}
-			\clearpage
-		\subsection{Process specifications}
-			\begin{itemize}
-				\item Activity diagram to add a paper: See figure 5
-				\item Activity diagram to edit a paper: See figure 6
-				\item Activity diagram to Login: See figure 7
-				\item Activity diagram to Request document details: See figure 8				
-			\end{itemize}
-			\begin{figure}
-				\includegraphics[width=\linewidth]{Activity diagram-Add a paper.png}
-				\caption{Adding a paper to the database}
-			\end{figure}
-			\begin{figure}
-				\includegraphics[width=\linewidth]{Activity diagram_Edit a paper.png}
-				\caption{Editing a paper}
-			\end{figure}
-			\begin{figure}
-				\includegraphics[width=\linewidth]{Activity.Login.jpg}
-				\caption{Login to system}
-			\end{figure}
-			\begin{figure}
-				\includegraphics[width=\linewidth]{Pictures/Request.Paper.jpg}
-				\caption{Request paper details}
-			\end{figure}
-			\newpage
-		\subsection{Domain Model}
-			\begin{list}{$\bullet$}{\leftmargin=1.5cm \itemindent=0em}
-				\item Domain Model of the system: See figure 9
-			\end{list}
-			\begin{figure}[h!]
-				\includegraphics[width=\linewidth]{Pictures/5-5.png}
-				\caption{Domain Model}
-			\end{figure}
-		
-	\section{Open Issues}		
-		There are currently no open issues.
-		
-		
-		
-		
-			\title{Software Architecture Documentation\\
-			\maketitle
-			\section{Software Architecture Documentation}
-			\subsection{Architecture requirements}
-			\paragraph\indent .....
-			
-			\subsection{Architectural scope}
-			\paragraph\indent ......
-			
-			
-			\subsection{Quality requirements}
-			\paragraph\indent ......
-			
-			\subsection{Integration and access channel requirements}	
-			\paragraph\indent......
-			
-			
-			\subsection{Architecture constraints}
-			\paragraph\indent ......
-			
-			
-			\section{Functional requirements and application design}
-			\subsection{....}
-			\paragraph\indent .....
-			
-			
-			\section{Architectural patterns or styles}		
-			T....
-			
-			\section{Architectural tactics or strategies}		
-			T.....
-			
-			
-			\section{Use of reference architectures and frameworks}		
-			.........
-			
-			
-			\section{Access and integration channels}		
-			.........
-			
-			\section{Technologies}		
-			\paragraph\indent Technologies used will probably be MySQL for the database , it is very lite weight and will have sufficient access control for the given product. The server will be a mix of PHP and Java, both will connect to MySQL , the Java will be the host for the android connection and the PHP will handle requests from the web interface.
-			
-		\end{document}
-		
+	\newpage
+	\subsection{Developer/Client Communication}
+	
+	\newpage
+	\subsection{Technical Challenges}
+	
+	\newpage
+	\subsection{Technology Stack}
+	
+	\newpage
+	\subsection{Deliverables}
+	
+	
+	\newpage
+	\section{Conclusion}
+	
+	Should you require any further information, feel free to contact our team lead, Bilal Muhammad on:
+	
+	\begin{itemize}
+		\item[$\bullet$]Cell: 072 878 7807
+		\item[$\bullet$]Email: bilibongers@gmail.com
+	\end{itemize}
+	We are extremely excited to be working on this project and also look forward to be working with you.
+	
+	
 \end{document}
