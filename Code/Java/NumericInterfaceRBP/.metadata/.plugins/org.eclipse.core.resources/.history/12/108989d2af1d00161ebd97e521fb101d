@@ -1,0 +1,17 @@
+
+public class BackgroundWorkings {
+int hiddenPin;
+	public BackgroundWorkings() {
+		generatePin();
+	}
+
+	private void generatePin() {
+		hiddenPin=(int) Math.round((Math.random()*999885));
+		
+	}
+
+	public void submitPin(int pin) {
+		// TODO Auto-generated method stub
+		System.out.println(pin);
+	}
+}
