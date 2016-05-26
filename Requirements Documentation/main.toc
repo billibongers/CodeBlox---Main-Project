@@ -9,3 +9,25 @@
 \contentsline {subsubsection}{\numberline {3.2.1}Scope}{6}{subsubsection.3.2.1}
 \contentsline {subsubsection}{\numberline {3.2.2}Domain Model}{7}{subsubsection.3.2.2}
 \contentsline {subsubsection}{\numberline {3.2.3}Use Cases}{8}{subsubsection.3.2.3}
+\contentsline {subsection}{\numberline {3.3}Notifications}{10}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Scope}{10}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Domain Model}{11}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Use Cases}{11}{subsubsection.3.3.3}
+\contentsline {section}{\numberline {4}Architectural Requirements/Design Specification}{13}{section.4}
+\contentsline {subsection}{\numberline {4.1}Software architecture overview}{13}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}clientLayer}{14}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}accessLayer}{14}{subsubsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.3}businessProcessesLayer}{14}{subsubsection.4.1.3}
+\contentsline {subsubsection}{\numberline {4.1.4}persistenceAccessLayer}{14}{subsubsection.4.1.4}
+\contentsline {subsubsection}{\numberline {4.1.5}persistenceLayer}{14}{subsubsection.4.1.5}
+\contentsline {subsection}{\numberline {4.2}Access Channel Requirements}{14}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Architectural Scope}{15}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Quality Requirements}{15}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}Performance}{15}{subsubsection.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}Security}{15}{subsubsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.3}Reliability}{15}{subsubsection.4.4.3}
+\contentsline {subsubsection}{\numberline {4.4.4}Flexibility}{16}{subsubsection.4.4.4}
+\contentsline {subsubsection}{\numberline {4.4.5}Maintainability}{16}{subsubsection.4.4.5}
+\contentsline {subsubsection}{\numberline {4.4.6}Monitorability}{16}{subsubsection.4.4.6}
+\contentsline {subsubsection}{\numberline {4.4.7}Usability}{16}{subsubsection.4.4.7}
+\contentsline {subsubsection}{\numberline {4.4.8}Cost}{16}{subsubsection.4.4.8}
