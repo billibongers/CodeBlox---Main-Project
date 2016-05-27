@@ -367,7 +367,7 @@
 		\item An external could server to allow communication with the internal server and the android application the owner will be using. 
 	\end{itemize}
 	
-	\subsection{Quality Requirements}
+	\subsection{Global Quality Requirements}
 	
 	\subsubsection{Performance}
 	\begin{itemize}
@@ -379,6 +379,8 @@
 		\item In terms of sending the OTP, end to end encryption with (check best hashing algorithm) will be used. For the initial system (which will be later used as the backup system) the OTP will be sent in a HTTP package. 
 		\item The OTP generated will be deleted once used, this ensures that a pin that was used will not work again if the delivery person attempts to use it at a later stage.
 		\item In future the system will enforce confidentiality through encrypted communication of SIP (Session Initiation Protocol).
+		\item Users of the system will will also need to be authenticated before they may make use of the various processes.
+		\item Certain functionality will be restricted to the authorisation of a user, i.e. what role the user has within the system.
 	\end{itemize}
 	
 	\subsubsection{Reliability}
@@ -399,6 +401,7 @@
 	\begin{itemize}
 		\item Maintenance of this application will be handled by the developers, hence the use of an external server.
 		\item The server will have to be well maintained because all the people who have this system in their homes will connect to the external server. 
+		\item Developers should be able to to add new functionality to the system, as well as change some if the existing functionality if they wish.
 	\end{itemize}
 	
 	\subsubsection{Monitorability}
@@ -420,5 +423,129 @@
 	\end{itemize}
 	
 	
+	\subsubsection{Testability}
+	\begin{itemize}
+		\item The individual components of the system needs to be testable through the use of mock objects and automated unit tests.
+		\item Automated integration tests should be used to test the system as a whole.
+		\item In particular the tests need to verify that the preconditions are met, and that post conditions hold true once a service has been provided.
+	\end{itemize}
 	
+	\subsection{Architectural Constraints}
+	The client has some architectural specifications in place that will need to be adhered to, in order to successfully complete this project.
+	
+	\subsubsection{Use of Inexpensive Devices}
+	The devices used to construct the physical system needs to be as inexpensive as possible, thus providing a larger audience with access to it. Devices such as the following will be included:
+	\begin{itemize}
+		\item Raspberry Pi 3
+		\item IP Camera/Pi Camera
+		\item Internet Enabled Switches
+		\item WiFi Routers
+		\item Android Smartphone (Users are assumed to posses one already).
+	\end{itemize}
+	
+	\subsubsection{Technology Stack}
+	For monetary reasons, the client has requested that the entire system be developed using open source technologies. CodeBlox has therefore decided to settle on the Java Ecosystem, since we have already had exposure to such technologies. a Preliminary stack will include the following technologies:
+	
+	\begin{itemize}
+		\item \textbf{Java EE} as the primary development platform
+		\item \textbf{NetBeans IDE} as the primary development environment.
+		\item \textbf{Android Studio} to the build the mobile application that will be used.
+		\item \textbf{Apache Maven} will be used as the primary build tool
+		\item \textbf{Mockito/TestNG} for unit testing
+		\item \textbf{JAX-RS} for implementing RESTful webservices.
+		\item \textbf{JBoss} for the primary application server (New version of glassfish seems to have some issues).
+		\item \textbf{Linux} as the operating system
+		\item \textbf{MySQL} as the primary persistence technology.
+	\end{itemize}
+	
+	\subsection{Architectural Design}
+	This section specifies the architectural responsibilities of various architectural components.
+	\subsubsection{Architectural Responsibilities}
+	\begin{itemize}
+		\item The responsibility of providing an execution environment for business processes is assigned to an application server. i.e. \textbf{JBoss}
+		\item The responsibility of persisting domain objects is assigned to the the database i.e. \textbf{MySQL}
+		\item The responsibility of providing access to the database is assigned to the persistence API i.e. \textbf{Java Persistence API (JPA)}
+		\item The responsibility of providing access channels to users is assigned to the web services framework i.e. \textbf{Jersey, which is an implementation of JAX-RS for RESTful Web Services}
+		\item The responsibility of providing users access via mobile devices is assigned to the mobile application framework i.e. \textbf{Android Studio}
+	\end{itemize}
+	
+	\subsubsection{Infrastructure}
+	For this particular project, the \textbf{layered architectural pattern} will be used as an infrastructure. The pattern limits access of components within one layer to components which are in the same layer or one level down. Thus it cannot access components in the layer above it. What makes it a very useful pattern is that different levels can be easily replaced without disrupting layers either above or below it. 
+	
+	\newpage
+	\subsection{Application Server}
+	The application server refers to the architectural component within which business processes are deployed and executed. Put in other words, the application server will be hosting the business processes layer of the system.
+	
+	\subsubsection{Quality Requirements}
+	\begin{itemize}
+		\item\textbf{Flexibility}
+		\begin{itemize}
+			\item deploy different versions of the system with minimum downtime.
+		\end{itemize}
+		
+		\item\textbf{Reliability}
+		\begin{itemize}
+			\item Requires that service requests are not partially executed. Thus the requested service will only be executed once postconditions are fulfilled. If a service could not be provided, a reason must be given.
+		\end{itemize}
+		
+		\item\textbf{Security}
+		\begin{itemize}
+			\item The application server must support role-based authorisation. Thus only a user with a certain level of authorisation may execute certain processes. No direct access should be provided to the database. 
+		\end{itemize}
+		
+		\item\textbf{Testability}
+		\begin{itemize}
+			\item The application server should support out-of-container testing as well as unit testing.
+		\end{itemize}
+		
+	\end{itemize}
+	
+	\subsubsection{Tactics as provided by Java EE}
+	Java EE 7 supports all of the architectural tactics which are specified in the software architecture specific to the application server.
+	
+	\begin{itemize}
+		\item\textbf{Flexibility Tactics}
+		\begin{itemize}
+			\item Context and Dependency Injection (CDI) is fully supported by Java-EE by using the @Injection annotations.
+			\item Hot deployment is supported by the \textbf{JBoss} application server.
+		\end{itemize}
+		
+		\item\textbf{Reliability Tactics}
+		\begin{itemize}
+			\item Java-EE supports container-managed transactions across multiple transaction-supporting resources. Transaction requirements can be specified by annotating services with TransactionAttribute.Required.
+		\end{itemize}
+		
+		\item\textbf{Security}
+		\begin{itemize}
+			\item Java-EE supports role-based authorisation in the form of container managed declarative authorisation and programmatic authorisation. Methods are annotated with the required security roles.
+		\end{itemize}
+		
+		\item\textbf{Testability}
+		\begin{itemize}
+			\item Java-EE supports dependency injection and Java-EE specific information is specified via annotations. All application code can thus be executed outside containers. Dependency injection can be used to inject mock objects allowing unit tests to be reused.
+		\end{itemize}
+		
+	\end{itemize}
+	\subsection{Database}
+	For this particular project we will be utilising a relational database, namely \textbf{MySQL}. Support for the MySQL database is well documented and most developers are fairly familiar with it and its use. 
+	
+	\subsection{Persistence API}
+	The persistence API will provide indirect access to the MySQL database. For the particular project the Java Persistence API will be used.
+	
+	{\noindent}JPA implements the following:
+	\begin{itemize}
+		\item\textbf{object-relational mapping}
+		\item\textbf{query mapping}
+		\item\textbf{object caching}
+		\item\textbf{transaction support}
+		\item\textbf{connection pooling}
+	\end{itemize}
+	
+	{\noindent}For all query purposes, the Java Persistence Query Language (JPQL) will be used.
+	
+	\subsection{Web Services Framework}
+	The web services framework refers to a wrapping layer that are used to wrap all business processes. This allows for the decoupling of user-interface technologies (in this case android app or web page) from the back end technologies.
+	
+	\subsubsection{Architecture Design}
+	The project will make use of the Jersey implementation of JAX-RS of the JAVA-EE application server. Marshalling and demarshalling will be achieved by making use of the relevant annotations i.e. @produces and @consumes.
 \end{document}

@@ -22,7 +22,7 @@
 \BOOKMARK [3][-]{subsubsection.4.1.5}{persistenceLayer}{subsection.4.1}% 22
 \BOOKMARK [2][-]{subsection.4.2}{Access Channel Requirements}{section.4}% 23
 \BOOKMARK [2][-]{subsection.4.3}{Architectural Scope}{section.4}% 24
-\BOOKMARK [2][-]{subsection.4.4}{Quality Requirements}{section.4}% 25
+\BOOKMARK [2][-]{subsection.4.4}{Global Quality Requirements}{section.4}% 25
 \BOOKMARK [3][-]{subsubsection.4.4.1}{Performance}{subsection.4.4}% 26
 \BOOKMARK [3][-]{subsubsection.4.4.2}{Security}{subsection.4.4}% 27
 \BOOKMARK [3][-]{subsubsection.4.4.3}{Reliability}{subsection.4.4}% 28
@@ -31,3 +31,17 @@
 \BOOKMARK [3][-]{subsubsection.4.4.6}{Monitorability}{subsection.4.4}% 31
 \BOOKMARK [3][-]{subsubsection.4.4.7}{Usability}{subsection.4.4}% 32
 \BOOKMARK [3][-]{subsubsection.4.4.8}{Cost}{subsection.4.4}% 33
+\BOOKMARK [3][-]{subsubsection.4.4.9}{Testability}{subsection.4.4}% 34
+\BOOKMARK [2][-]{subsection.4.5}{Architectural Constraints}{section.4}% 35
+\BOOKMARK [3][-]{subsubsection.4.5.1}{Use of Inexpensive Devices}{subsection.4.5}% 36
+\BOOKMARK [3][-]{subsubsection.4.5.2}{Technology Stack}{subsection.4.5}% 37
+\BOOKMARK [2][-]{subsection.4.6}{Architectural Design}{section.4}% 38
+\BOOKMARK [3][-]{subsubsection.4.6.1}{Architectural Responsibilities}{subsection.4.6}% 39
+\BOOKMARK [3][-]{subsubsection.4.6.2}{Infrastructure}{subsection.4.6}% 40
+\BOOKMARK [2][-]{subsection.4.7}{Application Server}{section.4}% 41
+\BOOKMARK [3][-]{subsubsection.4.7.1}{Quality Requirements}{subsection.4.7}% 42
+\BOOKMARK [3][-]{subsubsection.4.7.2}{Tactics as provided by Java EE}{subsection.4.7}% 43
+\BOOKMARK [2][-]{subsection.4.8}{Database}{section.4}% 44
+\BOOKMARK [2][-]{subsection.4.9}{Persistence API}{section.4}% 45
+\BOOKMARK [2][-]{subsection.4.10}{Web Services Framework}{section.4}% 46
+\BOOKMARK [3][-]{subsubsection.4.10.1}{Architecture Design}{subsection.4.10}% 47
