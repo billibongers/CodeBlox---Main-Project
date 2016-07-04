@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=
+            ".MenuExampleActivity" >
+        <item
+            android:id="@+id/open"
+            android:orderInCategory="1"
+            app:showAsAction="never"
+            android:title="Open Gate"/>
+        <item
+            android:id="@+id/min"
+            android:orderInCategory="2"
+            app:showAsAction="never"
+            android:title="Min Quality"/>
+
+        <item
+            android:id="@+id/max"
+            android:orderInCategory="2"
+            app:showAsAction="never"
+            android:title="Max Quality"/>
+</menu>
