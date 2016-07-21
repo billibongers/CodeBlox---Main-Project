@@ -16,15 +16,22 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.Socket;
+import java.net.URL;
 import java.net.UnknownHostException;
 
 public class MainActivity extends AppCompatActivity {
     String vidAddress = "rtsp://admin:antigrav@192.168.1.119/profile3/media.smp";
     String camIP="";
     String piIP="";
+    String pinDia="";
     Dialog PinDialog ;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -39,9 +46,13 @@ public class MainActivity extends AppCompatActivity {
 
         super.onStart();
         setUp();
-        setPin();
+        setPin();//For the pop up
+        getPin();
+
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
+
+
 
     private void setPin() {
         PinDialog = new Dialog(this);
@@ -55,6 +66,27 @@ public class MainActivity extends AppCompatActivity {
                 PinDialog.dismiss();
             }
         });
+    }
+
+
+    private void getPin() {//Gets pin from RBP
+        URL url = null;
+        try {
+            url = new URL(piIP+":55555");
+        HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
+        urlConnection.setRequestMethod("GET");
+        int statusCode = urlConnection.getResponseCode();
+            InputStream it = new BufferedInputStream(urlConnection.getInputStream());
+            InputStreamReader read = new InputStreamReader(it);
+            BufferedReader buff = new BufferedReader(read);
+            StringBuilder dta = new StringBuilder();
+            String chunks ;
+            while((chunks = buff.readLine()) != null)
+            {
+                dta.append(chunks);
+            }
+            pinDia="One Time Pin is "+chunks;
+        } catch (Exception e) {pinDia="Pin Could not be generated";}
     }
 
     public void setUp()
@@ -118,7 +150,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.pinBtn://Showing the pin
                 System.out.println("Pin Please");
                 TextView pin = (TextView)PinDialog.findViewById(R.id.pin);
-                pin.setText("The Curent Pin is "+ piIP);
+               // pin.setText("The Curent Pin is "+ piIP);
+                pin.setText(pinDia);
                 PinDialog.show();
                 vidAddress = "rtsp://admin:antigrav@"+camIP+"/profile6/media.smp";
                 return true;
