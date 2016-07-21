@@ -10,19 +10,14 @@
             app:showAsAction="never"
             android:title="Open Gate"/>
         <item
-            android:id="@+id/pinBtn"
-            android:orderInCategory="2"
-            app:showAsAction="never"
-            android:title="Get Pin"/>
-        <item
             android:id="@+id/min"
-            android:orderInCategory="3"
+            android:orderInCategory="2"
             app:showAsAction="never"
             android:title="Min Quality"/>
 
         <item
             android:id="@+id/max"
-            android:orderInCategory="4"
+            android:orderInCategory="2"
             app:showAsAction="never"
             android:title="Max Quality"/>
 </menu>
