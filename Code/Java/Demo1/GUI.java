@@ -39,7 +39,7 @@ public class GUI extends JFrame {
 		
 		JLabel lblPin = new JLabel("PIN:");
 		lblPin.setFont(new Font("Arial", Font.PLAIN, 50));
-		lblPin.setBounds(10, 11, 97, 53);
+		lblPin.setBounds(10, 11, 105, 53);
 		contentPane.add(lblPin);
 		 BackgroundWorkings process= new BackgroundWorkings();
 		
@@ -62,7 +62,8 @@ public class GUI extends JFrame {
 							if((p+q*4)<10)
 								lblNewLabel.setText(lblNewLabel.getText()+(p+(q*4))+"");
 							else if((p+q*4)<11) lblNewLabel.setText("");
-							else process.submitPin(Integer.parseInt(lblNewLabel.getText()));
+							else {process.submitPin(Integer.parseInt(lblNewLabel.getText()));
+								lblNewLabel.setText("");}
 						}});
 				contentPane.add(keypad[x+y*4]);
 			}
