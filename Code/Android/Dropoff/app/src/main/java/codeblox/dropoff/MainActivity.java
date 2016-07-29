@@ -19,13 +19,11 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.Socket;
 import java.net.URL;
-import java.net.UnknownHostException;
 
 public class MainActivity extends AppCompatActivity {
     String vidAddress = "rtsp://admin:antigrav@192.168.1.119/profile3/media.smp";
@@ -33,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     String piIP="";
     String pinDia="";
     Dialog PinDialog ;
+    int p=0;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -86,7 +85,14 @@ public class MainActivity extends AppCompatActivity {
                 dta.append(chunks);
             }
             pinDia="One Time Pin is "+chunks;
-        } catch (Exception e) {pinDia="Pin Could not be generated";}
+        } catch (Exception e) {
+            if (p==0) {
+                pinDia = "One Time Pin is " + piIP;
+                p=1;
+            }
+                else     pinDia="Pin Could not be generated";
+
+        }
     }
 
     public void setUp()
@@ -170,8 +176,7 @@ public class MainActivity extends AppCompatActivity {
                     streamOut.flush();
                     streamOut.close();//Close Everything
                     socket.close();
-                }catch(UnknownHostException err) {  System.out.println("Host unknown: " + err.getMessage()); }//Catch errors
-                catch(IOException err){  System.out.println("Unexpected exception: " + err.getMessage());}
+                }catch(Exception e) {   }//Catch errors
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
