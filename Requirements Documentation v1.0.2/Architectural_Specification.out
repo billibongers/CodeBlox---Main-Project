@@ -1,0 +1,38 @@
+\BOOKMARK [1][-]{section.1}{Architectural Requirements/Design Specification}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Software architecture overview}{section.1}% 2
+\BOOKMARK [3][-]{subsubsection.1.1.1}{The Clients}{subsection.1.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.1.2}{API Gateway}{subsection.1.1}% 4
+\BOOKMARK [3][-]{subsubsection.1.1.3}{RESTful layer}{subsection.1.1}% 5
+\BOOKMARK [3][-]{subsubsection.1.1.4}{Micro Services}{subsection.1.1}% 6
+\BOOKMARK [3][-]{subsubsection.1.1.5}{Persistence}{subsection.1.1}% 7
+\BOOKMARK [2][-]{subsection.1.2}{Access Channel Requirements}{section.1}% 8
+\BOOKMARK [2][-]{subsection.1.3}{Architectural Scope}{section.1}% 9
+\BOOKMARK [2][-]{subsection.1.4}{Quality Requirements}{section.1}% 10
+\BOOKMARK [3][-]{subsubsection.1.4.1}{Performance}{subsection.1.4}% 11
+\BOOKMARK [3][-]{subsubsection.1.4.2}{Scalability}{subsection.1.4}% 12
+\BOOKMARK [3][-]{subsubsection.1.4.3}{Security}{subsection.1.4}% 13
+\BOOKMARK [3][-]{subsubsection.1.4.4}{Privacy}{subsection.1.4}% 14
+\BOOKMARK [3][-]{subsubsection.1.4.5}{Reliability}{subsection.1.4}% 15
+\BOOKMARK [3][-]{subsubsection.1.4.6}{Flexibility}{subsection.1.4}% 16
+\BOOKMARK [3][-]{subsubsection.1.4.7}{Maintainability}{subsection.1.4}% 17
+\BOOKMARK [3][-]{subsubsection.1.4.8}{Monitorability}{subsection.1.4}% 18
+\BOOKMARK [3][-]{subsubsection.1.4.9}{Usability}{subsection.1.4}% 19
+\BOOKMARK [3][-]{subsubsection.1.4.10}{Cost}{subsection.1.4}% 20
+\BOOKMARK [3][-]{subsubsection.1.4.11}{Testability}{subsection.1.4}% 21
+\BOOKMARK [2][-]{subsection.1.5}{Architectural Constraints}{section.1}% 22
+\BOOKMARK [3][-]{subsubsection.1.5.1}{Use of Inexpensive Devices}{subsection.1.5}% 23
+\BOOKMARK [3][-]{subsubsection.1.5.2}{Technology Stack}{subsection.1.5}% 24
+\BOOKMARK [2][-]{subsection.1.6}{Architectural Design}{section.1}% 25
+\BOOKMARK [3][-]{subsubsection.1.6.1}{Architectural Responsibilities}{subsection.1.6}% 26
+\BOOKMARK [3][-]{subsubsection.1.6.2}{Infrastructure}{subsection.1.6}% 27
+\BOOKMARK [2][-]{subsection.1.7}{Application Server/Micro Services}{section.1}% 28
+\BOOKMARK [3][-]{subsubsection.1.7.1}{Quality Requirements}{subsection.1.7}% 29
+\BOOKMARK [3][-]{subsubsection.1.7.2}{Tactics as provided by Nodejs and Micro Services Architecture}{subsection.1.7}% 30
+\BOOKMARK [2][-]{subsection.1.8}{Persistence}{section.1}% 31
+\BOOKMARK [3][-]{subsubsection.1.8.1}{Quality Requirements}{subsection.1.8}% 32
+\BOOKMARK [3][-]{subsubsection.1.8.2}{Tactics as provided by MongoDB}{subsection.1.8}% 33
+\BOOKMARK [2][-]{subsection.1.9}{Mongoose}{section.1}% 34
+\BOOKMARK [2][-]{subsection.1.10}{RESTful Webservices}{section.1}% 35
+\BOOKMARK [3][-]{subsubsection.1.10.1}{API Gateway}{subsection.1.10}% 36
+\BOOKMARK [3][-]{subsubsection.1.10.2}{Client - Web}{subsection.1.10}% 37
+\BOOKMARK [3][-]{subsubsection.1.10.3}{Client - Android App}{subsection.1.10}% 38
