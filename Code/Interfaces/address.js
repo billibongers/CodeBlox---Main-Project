@@ -1,8 +1,27 @@
+/*********************************************************************
+	Code version 0.1
+	Address class
+	Authors:
+		Bilal Muhammad
+		Lethabo Mogase
+		Dirk de Klerk
+		Lorenzo Spazzoli
+	Team:
+		CodeBlox
+*********************************************************************/
+
 var user = require('./user');
-var util = require('util').inherits;
 
-function Address(_houseNum, _street, _city, _postalcode){
+function Address(){
 
+}
+
+Address.prototype.houseNum = "";
+Address.prototype.street = "";
+Address.prototype.city = "";
+Address.prototype.postalcode = "";
+
+Address.prototype.setAddress = function(_houseNum, _street, _city, _postalcode){
 	this.houseNum = _houseNum;
 	this.street = _street;
 	this.city = _city; 
@@ -22,5 +41,7 @@ Address.prototype.getCity = function(){
 };
 
 Address.prototype.getpostalcode = function(){
-	return this.street; 
+	return this.postalcode; 
 };
+
+module.exports = Address;

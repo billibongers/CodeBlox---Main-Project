@@ -9,11 +9,20 @@
 	Team:
 		CodeBlox
 *********************************************************************/
+function Person(){
 
-function Person(_firstName, _lastName, _cellNumber){
+}
+
+Person.prototype.firstName = "";
+Person.prototype.lastName = "";
+Person.prototype.cellNumber = "";
+Person.prototype.email = "";
+
+Person.prototype.setPerson = function(_firstName, _lastName, _cellNumber, _email){
 	this.firstName = _firstName;
 	this.lastName = _lastName;
 	this.cellNumber = _cellNumber; 
+	this.email = _email;
 };
 
 Person.prototype.getName = function(){
@@ -28,8 +37,12 @@ Person.prototype.getCell = function(){
 	return this.cellNumber;
 };
 
+Person.prototype.getEmail = function(){
+	return this.email;
+};
+
 Person.prototype.getPerson = function(){
-	return this.getName() + this.getLname() + this.getCell();
+	return this.getName() + this.getLname() + this.getCell() + this.getEmail();
 };
 
 module.exports = Person;
