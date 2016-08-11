@@ -6,5 +6,9 @@
   "dependencies": {
     "dateformat": "~1.0.12",
     "moment": "~2.14.1"
+  },
+
+  "script": {
+  	"test": "mocha tests --watch"
   }
 }
