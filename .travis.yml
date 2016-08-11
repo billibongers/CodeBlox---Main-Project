@@ -4,5 +4,5 @@ node_js:
   - "4.4.7"
   - "4.2.6"
   - "iojs"
-install:
-  - "npm install"
+script: cd Code/Interfaces && npm install && mocha tests --watch
+
