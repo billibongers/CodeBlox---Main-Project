@@ -4,3 +4,9 @@ node_js:
   - "iojs"
 script: cd Code/Interfaces && npm install && mocha tests
 
+deploy:
+  provider: heroku
+  api_key:
+    secure: "0aedba82-45d4-4387-ab91-e36aa0d0cbae"
+
+
