@@ -14,6 +14,7 @@ var chai = require('chai');
 var expect = chai.expect;
 var Person = require('./../person');
 var User = require('./../user');
+bar pinGen = require('./../pinGenerator'); 
 
 //var ps = new Person("Bilal", "Muhammad", "0728787807");
 var newUser = new User();
@@ -50,3 +51,11 @@ describe('Inactive Status', function(){
 		chai.assert(expected == "Inactive",'Status not correct');
 	});
 });
+
+describe('Generating pins', function(){
+	it('Testing setPin function should generate 10 pins',function(){
+		newUser.setPin();
+		
+
+	})
+})

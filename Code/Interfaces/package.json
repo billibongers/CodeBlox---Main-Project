@@ -6,10 +6,10 @@
   "dependencies": {
     "dateformat": "~1.0.12",
     "mocha": "^3.0.2",
-    "moment": "~2.14.1"
+    "moment": "~2.14.1",
+    "otp-generator": "^1.1.0"
   },
-
   "script": {
-  	"test": "mocha tests --watch"
+    "test": "mocha tests --watch"
   }
 }
