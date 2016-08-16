@@ -9,12 +9,18 @@
 	Team:
 		CodeBlox
 *********************************************************************/
-var otpGenerator = require('otp-generator');
+var pinGen = require('./pinGenerator'); 
+var newPin = ""; 
+Boolean used = false; 
 
-function PinGenerator() {
-	otpGenerator.generate(8, {upperCase: false, specialChars: false, alphabets: false });
+function Pin() {
+	newPin = new pinGenerator();
 }
 
-module.exports = PinGenerator;
+Pin.prototype.getStatus = function(){
+	return used; 
+};
 
-
+Pin.prototype.setStatus = function(){
+	used = true; 
+};

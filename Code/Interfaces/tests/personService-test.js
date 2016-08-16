@@ -51,9 +51,3 @@ describe('Inactive Status', function(){
 		chai.assert(expected == "Inactive",'Status not correct');
 	});
 });
-
-describe('Generating pins', function(){
-	it('Testing setPin function should generate 10 pins',function(){
-		newUser.setPin();
-	})
-})
