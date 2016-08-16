@@ -14,7 +14,7 @@ var chai = require('chai');
 var expect = chai.expect;
 var Person = require('./../person');
 var User = require('./../user');
-bar pinGen = require('./../pinGenerator'); 
+var pinGen = require('./../pinGenerator'); 
 
 //var ps = new Person("Bilal", "Muhammad", "0728787807");
 var newUser = new User();

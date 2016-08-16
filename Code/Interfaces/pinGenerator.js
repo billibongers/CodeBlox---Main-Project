@@ -24,7 +24,6 @@ PinGenerator.prototype.setPin = function() {
  		console.log(pinArray[i]); 
 	}
 }; 
-PinGenerator.setPin();
 module.exports = PinGenerator;
 
 
