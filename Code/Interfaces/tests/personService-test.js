@@ -51,3 +51,36 @@ describe('Inactive Status', function(){
 		chai.assert(expected == "Inactive",'Status not correct');
 	});
 });
+
+var globalPin = "";
+describe('Does pin generate', function(){
+	it('Should return a 8 digit random number', function(){
+		var expected = newUser.getPin();
+		globalPin = newUser.getPin();
+		console.log(expected);
+		chai.assert(expected == expected,'8 digit random number not generated');
+	});
+});
+
+describe('Is pin for current user correct ?', function(){
+	it('Should return the same OTP generated from previous function', function(){
+		var expected = newUser.getPin();
+		chai.assert(expected == globalPin,'Pin global is causing a problem');
+	});
+});
+
+describe('Pin should be unused', function(){
+	it('Should return false', function(){
+		var expected = newUser.getPinStatus();
+		chai.assert(expected == false,'Pin status not correct');
+	});
+});
+
+describe('Pin should be used', function(){
+	it('Should return true', function(){
+		newUser.setPinStatus();
+		var expected = newUser.getPinStatus();
+		chai.assert(expected == true,'Pin status not correct');
+	});
+});
+

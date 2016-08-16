@@ -10,10 +10,15 @@
 		CodeBlox
 *********************************************************************/
 var otpGenerator = require('otp-generator');
+var pinReturn = "";
 
 function PinGenerator() {
-	otpGenerator.generate(8, {upperCase: false, specialChars: false, alphabets: false });
+	pinReturn = otpGenerator.generate(8, {upperCase: false, specialChars: false, alphabets: false });
 }
+
+PinGenerator.prototype.getPin = function(){
+	return pinReturn;
+};
 
 module.exports = PinGenerator;
 

@@ -10,11 +10,12 @@
 		CodeBlox
 *********************************************************************/
 var pinGen = require('./pinGenerator'); 
-var newPin = ""; 
-Boolean used = false; 
+var newPin = new pinGen();
+var newPinID = ""; 
+var used = false; 
 
 function Pin() {
-	newPin = new pinGenerator();
+	newPinID = newPin.getPin()
 }
 
 Pin.prototype.getStatus = function(){
@@ -22,5 +23,11 @@ Pin.prototype.getStatus = function(){
 };
 
 Pin.prototype.setStatus = function(){
-	used = true; 
+	used = true;
 };
+
+Pin.prototype.getPin = function(){
+	return newPinID;
+};
+
+module.exports = Pin;
