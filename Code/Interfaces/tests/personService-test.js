@@ -55,7 +55,5 @@ describe('Inactive Status', function(){
 describe('Generating pins', function(){
 	it('Testing setPin function should generate 10 pins',function(){
 		newUser.setPin();
-		
-
 	})
 })
