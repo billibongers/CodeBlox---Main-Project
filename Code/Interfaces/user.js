@@ -13,6 +13,7 @@
 var person = require('./person');
 var ActivationStatus = require('./ActivationStatus');
 var Address = require('./address'); 
+var pinGenerator = require('./pinGenerator');
 
 function User(){
 
@@ -23,6 +24,7 @@ User.prototype.idNum = "";
 var as = new ActivationStatus();
 var per = new person();
 var addr = new Address();
+var pin = new pinGenerator();
 
 User.prototype.setUser = function(_firstName, _lastName, _cellNumber, _email, _idNum) {
 	per.setPerson(_firstName, _lastName, _cellNumber, _email);
@@ -55,5 +57,8 @@ User.prototype.setAddress = function(_houseNum, _street, _city, _postalcode) {
 
 User.prototype.getAddress = function() {
 	return addr.getHouseNum() + addr.getStreet() + addr.getCity() + addr.getpostalcode();
+};
+User.prototype.setPin = function(){
+	return pin.setPin();
 };
 module.exports = User;
