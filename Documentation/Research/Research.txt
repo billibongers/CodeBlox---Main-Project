@@ -1,0 +1,35 @@
+Summary of Research Collected in the week of 10-17 August during my spike to try and get a better understanding of how 
+nodejs and the hardware on the pi communicate, i have tested most of the refferences below:
+
+https://github.com/troyth/node-raspicam		
+//Node Js based camera kit to make using the camera easier only works locally on  the pi not for streaming 
+
+http://blog.miguelgrinberg.com/post/stream-video-from-the-raspberry-pi-camera-to-web-browsers-even-on-ios-and-android		
+//Live stream to http using applications , this will act similar to the samsung camera but we do have more control over the stream , not based in node js
+
+http://www.girliemac.com/blog/2015/12/25/kittycam-raspberrypi-camera-cat-face-recog-nodejs/			
+//Code in nodejs with aditional help for the gate opening system using jonny-five, it also has some other apps that need to be installed to get it to work
+
+https://github.com/fpasteau/raspicam_node                                
+//Another node camera base *still needs to be tested
+
+http://www.doepiccoding.com/blog/?p=212
+//Basic Streaming using vlc ..... Some extra information in regards to how it works can be found at http://raspberrypi.stackexchange.com/questions/10564/streaming-live-from-the-picam
+
+
+Camera can be found on: rtsp://192.168.1.(IP):8554/  with an apromixate 3sec delay wich is less than the samsung camera 5sec delay
+
+
+
+Note Need to look into lowsudo aer latency 
+http://zacharybears.com/low-latency-raspberry-pi-video-streaming/
+
+
+Used to start vlc feed at start up moved tyhe bash file to /etc/init.d/
+sudo cp camfeed.sh /etc/init.d/camfeed.sh
+sudo chmod +x /etc/init.d/camfeed.sh
+sudo ln -s /etc/init.d/camfeed.sh /etc/rc.d
+
+
+//Extra this will help with getting a better feed on android https://github.com/spex66/RTSP-Camera-for-Android
+
