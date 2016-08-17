@@ -4,9 +4,12 @@
     "util": "~0.10.3"
   },
   "dependencies": {
+    "body-parser": "^1.15.2",
     "dateformat": "~1.0.12",
+    "express": "^4.14.0",
     "mocha": "^3.0.2",
     "moment": "~2.14.1",
+    "mongodb": "^2.2.6",
     "otp-generator": "^1.1.0"
   },
   "script": {
