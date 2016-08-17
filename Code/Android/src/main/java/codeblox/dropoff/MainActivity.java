@@ -12,10 +12,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.VideoView;
 
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.common.api.GoogleApiClient;
-
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -26,7 +22,7 @@ import java.net.Socket;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
-    String vidAddress = "rtsp://admin:antigrav@192.168.1.119/profile3/media.smp";
+    String vidAddress = "";
     String camIP="";
     String piIP="";
     String pinDia="";
@@ -36,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
-    private GoogleApiClient client;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         setPin();//For the pop up
         getPin();
 
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
 
@@ -110,11 +105,11 @@ public class MainActivity extends AppCompatActivity {
                 //Get TExt
                 EditText IP = (EditText)dialog.findViewById(R.id.IP);
                 EditText RBPIP = (EditText)dialog.findViewById(R.id.RBPIP);
-                 camIP = IP.getText().toString().trim();
+                vidAddress = IP.getText().toString().trim();
                  piIP = RBPIP.getText().toString().trim();
 
                 System.out.println("RBP "+RBPIP.getText().toString().trim()+"   Cam "+ IP.getText().toString().trim());
-                vidAddress = "rtsp://admin:antigrav@"+camIP+"/profile3/media.smp";
+               camIP=vidAddress ;
 
                 //Set up video feed
                 VideoView vidView = (VideoView) findViewById(R.id.myVideo);
@@ -145,12 +140,12 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.max://Setting video to profile 1 which shouold be the best quality
                 System.out.println("Max Enabled");
-                vidAddress = "rtsp://admin:antigrav@"+camIP+"/profile1/media.smp";
+                vidAddress = camIP;
                 return true;
 
             case R.id.min://Setting video to profile 6 which shouold be the lowest quality
                 System.out.println("Min Enabled");
-                vidAddress = "rtsp://admin:antigrav@"+camIP+"/profile6/media.smp";
+                vidAddress = camIP;
                 return true;
 
             case R.id.pinBtn://Showing the pin
@@ -159,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
                // pin.setText("The Curent Pin is "+ piIP);
                 pin.setText(pinDia);
                 PinDialog.show();
-                vidAddress = "rtsp://admin:antigrav@"+camIP+"/profile6/media.smp";
+                vidAddress = camIP;
                 return true;
 
 
@@ -183,43 +178,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect();
-        Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "Main Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
-                Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app URL is correct.
-                Uri.parse("android-app://codeblox.dropoff/http/host/path")
-        );
-        AppIndex.AppIndexApi.start(client, viewAction);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "Main Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
-                Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app URL is correct.
-                Uri.parse("android-app://codeblox.dropoff/http/host/path")
-        );
-        AppIndex.AppIndexApi.end(client, viewAction);
-        client.disconnect();
-    }
 }
