@@ -76,7 +76,7 @@ app.post("/persons", function(req, res) {
  *    DELETE: deletes contact by id
  */
 
-app.get("/persons/:id", function(req, res) {
+/*app.get("/persons/:id", function(req, res) {
   db.collection(CONTACTS_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
     if (err) {
       handleError(res, err.message, "Failed to get contact");
@@ -107,5 +107,5 @@ app.delete("/persons/:id", function(req, res) {
       res.status(204).end();
     }
   });
-});	
+});*/	
 
