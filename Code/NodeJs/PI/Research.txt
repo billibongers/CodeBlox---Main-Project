@@ -1,0 +1,3 @@
+http://www.robert-drummond.com/2013/06/06/raspberry-pi-gpio-inputoutput-in-javascript/      
+//A usefull link to help with connecting node js to the pi's hardware
+//Note reade the comments there are more usefull/faster/better links in those comments
