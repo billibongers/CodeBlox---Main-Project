@@ -1,0 +1,7 @@
+https://www.arduino.cc/en/Main/Software       
+//IDE required for connecting to and programing the arduino
+
+
+https://www.arduino.cc/en/Tutorial/Sweep      
+//code for controlling of the servo
+
