@@ -2,11 +2,25 @@ var express = require("express");
 var app = express();
 var mongo = require('mongojs');
 var db = mongo('dbPerson', ['persons']);
-var bodyParser = require('body-parser');
+var bodyParser = require("body-parser");
 var bcrypt = require('bcrypt');
 var SALT = "$2a$10$.b.ov84QXKdDd2CC7PZPl.";
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
+
+app.use(bodyParser.urlencoded());
+var router = express.Router();
+
+router.get('/',function(req,res){
+  res.json({"error" : false, "message" : "Hello !"});
+});
+
+router.post('/add',function(req,res){
+  res.json({"error" : false, "message" : "success", "data" : req.body.num1 + req.body.num2});
+});
+
+
+app.use('/',router);
 
 // Returns a person with existing email
 app.get('/returnUser/:email/:pass', function(req, res){
@@ -38,11 +52,12 @@ app.post('/registration', function(req, res){
             req.body.password1 = hash;
             db.persons.insert(req.body, function(err, doc){
                res.json(doc);
+               console.log(req.body);
             });
         });
    });
 });
 
-app.listen(3000);
-
-console.log("Server running on port 3000");
+app.listen(3000,function(){
+  console.log("Server running on port 3000");
+})
