@@ -2,10 +2,12 @@ var myApp = angular.module('myApp', []);
 myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http){
 
     $scope.navRegistration = function(){
-        window.location = 'register.html';
+	var open=1;
+          $http.get("/open").success(function(response){});
     };
 
     $scope.navLogin = function(){
-        window.location = 'login.html';
+       var close=1;
+          $http.get("/close").success(function(response){});
     };  
 }]);

@@ -27,16 +27,16 @@ function handleError(res, reason, message, code) {
 }
 
 // Close Gate
-app.get('/returnUser/:email/:pass', function(req, res){
- var emailadd = req.params.email;
-    var password = req.params.pass;
+app.get('/close', function(req, res){
+ var emailadd = req.params.close;
 	socket.write(''+0);
 	socket.pipe(socket);
 });
 
-app.get('/returnUser/:email', function(req, res){
-    var emailadd = req.params.email;
+app.get('/open', function(req, res){
+    var emailadd = req.params.open;
     socket.write(''+1);
+	socket.pipe(socket);
 });
 //Open gate
 app.post('/registration', function(req, res){
