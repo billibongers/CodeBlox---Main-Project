@@ -1,3 +1,5 @@
+
+
 var myApp = angular.module('myApp', []);
 myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http){
 
@@ -7,5 +9,5 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http){
 
     $scope.navLogin = function(){
         window.location = 'login.html';
-    };  
+    };
 }]);
