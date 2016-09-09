@@ -11,16 +11,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 var router = express.Router();
 
-router.get('/',function(req,res){
-  res.json({"error" : false, "message" : "Hello !"});
+var server = app.listen(process.env.PORT || 3000,function(){
+  var port = server.address().port;
+  console.log("Server running on port: " + port);
 });
 
-router.post('/add',function(req,res){
-  res.json({"error" : false, "message" : "success", "data" : req.body.num1 + req.body.num2});
-});
-
-
-app.use('/',router);
+//Error handling used by all endpoints
+function handleError(res, reason, message, code) {
+  console.log("ERROR: " + reason);
+  res.status(code || 500).json({"error": message});
+}
 
 // Returns a person with existing email
 app.get('/returnUser/:email/:pass', function(req, res){
@@ -58,6 +58,3 @@ app.post('/registration', function(req, res){
    });
 });
 
-app.listen(3000,function(){
-  console.log("Server running on port 3000");
-})
