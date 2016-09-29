@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded());
 var router = express.Router();
+var sockets = [];
 
 var server = app.listen(process.env.PORT || 3000,function(){
   var port = server.address().port;
@@ -19,13 +20,36 @@ var server = app.listen(process.env.PORT || 3000,function(){
 });
 
 var serverNet = net.createServer(function(socke) {
-socket=socke;
-socket.write(''+0);
-socket.pipe(socket);
+	socket=socke;
+	socket.write(''+0);
+	socket.pipe(socket);
+
+ 	console.log('Connected: ' + sock.remoteAddress + ':' + sock.remotePort);
+    sockets.push(sock);
+
+    socke.write('Welcome to the server!\n');
+ 
+    socke.on('data', function(data) {
+        for (var i=0; i<sockets.length ; i++) {
+            if (sockets[i] != socke) {
+                if (sockets[i]) {
+                    sockets[i].write(data);
+                }
+            }
+        }
+    });
+
+    socke.on('end', function() {
+        console.log('Disconnected: ' + sock.remoteAddress + ':' + sock.remotePort);
+        var index = sockets.indexOf(socke);
+        if (index != -1) {
+            delete sockets[index];
+        }
+    });
 });
 
-serverNet.listen(1337, '192.168.1.147');
-serverNet.listen(6663, '192.168.1.147');
+serverNet.listen(1337, '192.168.1.143');
+serverNet.listen(6663, '192.168.1.143');
 
 //Error handling used by all endpoints
 function handleError(res, reason, message, code) {
@@ -84,7 +108,7 @@ app.get('/open', function(req, res){
   socket.pipe(socket);
 });
 //To do for muli threading
-//Close connection after someone disconnects 
-//socket array 
+//Close connection after someone disconnects
+//socket array
 
 //To do to allow android to connect .... listen on local port 6663 and allow incoming info ie 1/0 to trigger /open/close
