@@ -112,15 +112,15 @@ public class MainActivity extends AppCompatActivity {
                camIP=vidAddress ;
 
                 //Set up video feed
-                VideoView vidView = (VideoView) findViewById(R.id.myVideo);
                 Uri vidUri = Uri.parse(vidAddress);
+                VideoView vidView = (VideoView)findViewById(R.id.myVideo);
+
 
                 //Start Stream
                 vidView.setVideoURI(vidUri);
                 vidView.start();
                 // ATTENTION: This was auto-generated to implement the App Indexing API.
                 // See https://g.co/AppIndexing/AndroidStudio for more information.
-
 
 
             }
@@ -140,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.max://Setting video to profile 1 which shouold be the best quality
                 System.out.println("Max Enabled");
+                doIt();
                 vidAddress = camIP;
                 return true;
 
@@ -177,5 +178,58 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
+    public void doIt() {
+      //  System.out.println("Made it to the doIt() function");
+        final Client myClient = new Client("192.168.1.143", 6663);
+
+            //final Client myClient = new Client("192.168.0.8", 1234);
+            myClient.setClientCallback(new Client.ClientCallback () {
+                @Override
+                public void onMessage(String message) {
+                }
+
+                @Override
+                public void onConnect(Socket socket) {
+                    myClient.send("Hello World!\n");
+                    myClient.disconnect();
+                }
+
+                @Override
+                public void onDisconnect(Socket socket, String message) {
+                }
+
+                @Override
+                public void onConnectError(Socket socket, String message) {
+                }
+            });
+
+            myClient.connect();
+
+      //  socket.setClientCallback(new Client.ClientCallback () {
+   //         @Override
+     //       public void onMessage(String message) {
+    //        }
+
+     //       @Override
+     //       public void onConnect(Socket socket1) {
+             //   socket.send("Hello World!\n");
+            //    socket.disconnect();
+     //       }
+
+     //       @Override
+     ///       public void onDisconnect(Socket socket, String message) {
+       //     }
+//
+       //     @Override
+      //      public void onConnectError(Socket socket, String message) {
+     //       }
+     //   });
+
+       // socket.connect();
+    }
+
+
 
 }
