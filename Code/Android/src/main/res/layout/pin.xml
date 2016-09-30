@@ -6,7 +6,7 @@
         android:id="@+id/pin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="28dp" />
+        android:textSize="20dp" />
     <Button android:id="@+id/OkayPin"
         android:layout_below="@id/pin"
         android:layout_width="wrap_content"
