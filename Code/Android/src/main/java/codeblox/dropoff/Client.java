@@ -59,10 +59,10 @@ public class Client {
         }
     }
 
-    public void send(String message){
+    public void send(char message){
         try {
             Log.e("System message: ","reaching send message");
-            socketOutput.write(message.getBytes());
+            socketOutput.write(message);
         } catch (IOException e) {
             if(listener!=null)
                 listener.onDisconnect(socket, e.getMessage());

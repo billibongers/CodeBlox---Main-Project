@@ -14,7 +14,6 @@ import android.widget.VideoView;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
-import java.io.DataOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -28,6 +27,39 @@ public class MainActivity extends AppCompatActivity {
     String pinDia="";
     Dialog PinDialog ;
     int p=0;
+    String tempIn="N/a";
+    Client myClient ;
+
+    //Connection to server that runs when the application is started
+    public MainActivity() {
+        myClient = new Client("192.168.1.143", 6663);
+        myClient.setClientCallback(new Client.ClientCallback () {
+            @Override
+            public void onMessage(String message) {
+                tempIn=message;
+                myClient.send('0');// send message as i recieve a message ... restful i guess :P
+            }
+
+            @Override
+            public void onConnect(Socket socket) {
+                myClient.send('1');
+
+            }
+
+            @Override
+            public void onDisconnect(Socket socket, String message) {
+               // myClient.send("KTNKSBAI\n");
+            }
+
+            @Override
+            public void onConnectError(Socket socket, String message) {
+            }
+        });
+
+        myClient.connect();
+    }
+
+
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -114,13 +146,9 @@ public class MainActivity extends AppCompatActivity {
                 //Set up video feed
                 Uri vidUri = Uri.parse(vidAddress);
                 VideoView vidView = (VideoView)findViewById(R.id.myVideo);
-
-
                 //Start Stream
                 vidView.setVideoURI(vidUri);
                 vidView.start();
-                // ATTENTION: This was auto-generated to implement the App Indexing API.
-                // See https://g.co/AppIndexing/AndroidStudio for more information.
 
 
             }
@@ -130,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu) {//Menu button
         getMenuInflater().inflate(R.menu.settings, menu);
         return true;
     }
@@ -139,21 +167,26 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.max://Setting video to profile 1 which shouold be the best quality
-                System.out.println("Max Enabled");
-                doIt();
-                vidAddress = camIP;
+              //  System.out.println("Connect");
+               myClient.send('2');// send a message to the server for them to process this was the max video button
+                return true;
+            case R.id.close://Setting video to profile 1 which shouold be the best quality
+                //  System.out.println("Connect");
+                myClient.send('3');// send a message to the server for them to process this was the max video button
                 return true;
 
             case R.id.min://Setting video to profile 6 which shouold be the lowest quality
-                System.out.println("Min Enabled");
-                vidAddress = camIP;
+              //  System.out.println("Min Enabled");
+                myClient.disconnect();//disconnect from server
+              //  myClient.disconnect();
                 return true;
 
             case R.id.pinBtn://Showing the pin
-                System.out.println("Pin Please");
+              //  System.out.println("Pin Please");
+
                 TextView pin = (TextView)PinDialog.findViewById(R.id.pin);
-               // pin.setText("The Curent Pin is "+ piIP);
-                pin.setText(pinDia);
+               pin.setText(tempIn);// DISPLAY the message sent from the node server ... this was the get pin button
+                //pin.setText(pinDia);
                 PinDialog.show();
                 vidAddress = camIP;
                 return true;
@@ -163,17 +196,17 @@ public class MainActivity extends AppCompatActivity {
             case R.id.open:
                 // This will send a messages to the raspberry pi to open the gate
                 //
-                // todo
-
-                try {
-                    Socket socket = new Socket("192.168.1.102", 4444);//Start A Connection
-                    DataOutputStream streamOut = new DataOutputStream(socket.getOutputStream());
-                    streamOut.writeUTF("Testing :P If this message arrives it works");//Send Message
-                    streamOut.flush();
-                    streamOut.close();//Close Everything
-                    socket.close();
-                }catch(Exception e) {   }//Catch errors
-                return true;
+                // todo Do someting with this i guess it may help in the future or be useful in a distant time :P
+                myClient.connect();
+ //          try {
+//                    Socket socket = new Socket("192.168.1.102", 4444);//Start A Connection
+ //                   DataOutputStream streamOut = new DataOutputStream(socket.getOutputStream());
+   //                 streamOut.writeUTF("Testing :P If this message arrives it works");//Send Message
+ //                   streamOut.flush();
+  //                  streamOut.close();//Close Everything
+        //            socket.close();
+       //         }catch(Exception e) {   }//Catch errors
+             return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -182,30 +215,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void doIt() {
       //  System.out.println("Made it to the doIt() function");
-        final Client myClient = new Client("192.168.1.143", 6663);
+
 
             //final Client myClient = new Client("192.168.0.8", 1234);
-            myClient.setClientCallback(new Client.ClientCallback () {
-                @Override
-                public void onMessage(String message) {
-                }
-
-                @Override
-                public void onConnect(Socket socket) {
-                    myClient.send("Hello World!\n");
-                    myClient.disconnect();
-                }
-
-                @Override
-                public void onDisconnect(Socket socket, String message) {
-                }
-
-                @Override
-                public void onConnectError(Socket socket, String message) {
-                }
-            });
-
-            myClient.connect();
 
       //  socket.setClientCallback(new Client.ClientCallback () {
    //         @Override

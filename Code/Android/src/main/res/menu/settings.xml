@@ -8,21 +8,27 @@
             android:id="@+id/open"
             android:orderInCategory="1"
             app:showAsAction="never"
-            android:title="Open Gate"/>
+            android:title="I Do NOTHING"/>
         <item
             android:id="@+id/pinBtn"
             android:orderInCategory="2"
             app:showAsAction="never"
-            android:title="Get Pin"/>
+            android:title="Get message"/>
         <item
             android:id="@+id/min"
             android:orderInCategory="3"
             app:showAsAction="never"
-            android:title="Min Quality"/>
+            android:title="Disconnect"/>
 
         <item
             android:id="@+id/max"
             android:orderInCategory="4"
             app:showAsAction="never"
-            android:title="Max Quality"/>
+            android:title="Open"/>
+
+        <item
+            android:id="@+id/close"
+            android:orderInCategory="5"
+            app:showAsAction="never"
+            android:title="Close"/>
 </menu>
