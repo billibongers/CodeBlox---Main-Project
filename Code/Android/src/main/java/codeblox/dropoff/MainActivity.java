@@ -22,7 +22,7 @@ import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
     String vidAddress = "";
-    String camIP="";
+    String camIP="";    String serverip="192.168.1.149";
     String piIP="";
     String pinDia="";
     Dialog PinDialog ;
@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
     //Connection to server that runs when the application is started
     public MainActivity() {
-        myClient = new Client("192.168.1.143", 6663);
+       // setUp();
+        myClient = new Client(serverip, 6663);
         myClient.setClientCallback(new Client.ClientCallback () {
             @Override
             public void onMessage(String message) {
@@ -141,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
                  piIP = RBPIP.getText().toString().trim();
 
                 System.out.println("RBP "+RBPIP.getText().toString().trim()+"   Cam "+ IP.getText().toString().trim());
-               camIP=vidAddress ;
+               serverip=vidAddress ;
 
                 //Set up video feed
                 Uri vidUri = Uri.parse(vidAddress);
@@ -188,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
                pin.setText(tempIn);// DISPLAY the message sent from the node server ... this was the get pin button
                 //pin.setText(pinDia);
                 PinDialog.show();
-                vidAddress = camIP;
+                vidAddress = piIP;
                 return true;
 
 

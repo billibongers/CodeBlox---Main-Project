@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
-    <EditText android:text="Camera IP Address"
+    <EditText android:text="Server IP Address"
         android:id="@+id/IP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
