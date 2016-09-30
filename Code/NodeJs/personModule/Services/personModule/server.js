@@ -20,36 +20,58 @@ var server = app.listen(process.env.PORT || 3000,function(){
 });
 
 var serverNet = net.createServer(function(socke) {
-	socket=socke;
+
+    socket=socke;
 	socket.write(''+0);
 	socket.pipe(socket);
+});
 
- 	console.log('Connected: ' + sock.remoteAddress + ':' + sock.remotePort);
-    sockets.push(sock);
+serverNet.listen(1337, '192.168.1.143');
 
-    socke.write('Welcome to the server!\n');
+var serverAndroid = net.createServer(function(s){
+
+	console.log('Android connection - Server IP:6663');
+	console.log('Connected: ' + s.remoteAddress + ':' + s.remotePort);
+    sockets.push(s);
+
+    s.write('Welcome to the server!\n');
+    
  
-    socke.on('data', function(data) {
-        for (var i=0; i<sockets.length ; i++) {
-            if (sockets[i] != socke) {
+    s.on('data', function(data) {
+        /*for (var i=0; i<sockets.length ; i++) {
+            if (sockets[i] != s) {
                 if (sockets[i]) {
                     sockets[i].write(data);
+                    
                 }
             }
+        }*/
+        console.log(data);
+        if(data == 3) {
+        	console.log('Server:close request');
+			  socket.write(''+0);
+			  socket.pipe(socket);
+		
+
+        }
+        if(data == '2') {
+        	console.log('Server:open request');
+			  socket.write(''+1);
+			  socket.pipe(socket);
+
         }
     });
 
-    socke.on('end', function() {
-        console.log('Disconnected: ' + sock.remoteAddress + ':' + sock.remotePort);
-        var index = sockets.indexOf(socke);
+    s.on('end', function() {
+        console.log('Disconnected: ' + s.remoteAddress + ':' + s.remotePort);
+        var index = sockets.indexOf(s);
         if (index != -1) {
             delete sockets[index];
         }
     });
 });
 
-serverNet.listen(1337, '192.168.1.143');
-serverNet.listen(6663, '192.168.1.143');
+serverAndroid.listen(6663, '192.168.1.143');
 
 //Error handling used by all endpoints
 function handleError(res, reason, message, code) {
