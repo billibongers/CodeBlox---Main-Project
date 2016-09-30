@@ -38,15 +38,7 @@ var serverAndroid = net.createServer(function(s){
     
  
     s.on('data', function(data) {
-        /*for (var i=0; i<sockets.length ; i++) {
-            if (sockets[i] != s) {
-                if (sockets[i]) {
-                    sockets[i].write(data);
-                    
-                }
-            }
-        }*/
-        console.log(data);
+     
         if(data == 3) {
         	console.log('Server:close request');
 			  socket.write(''+0);
