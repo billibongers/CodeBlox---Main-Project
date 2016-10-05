@@ -2,11 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
-    <EditText android:text="Server IP Address"
+    <EditText android:text="UserName"
         android:id="@+id/IP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <EditText android:text="RBP IP Address"
+    <EditText android:text="Password"
         android:layout_below="@id/IP"
         android:id="@+id/RBPIP"
         android:layout_width="wrap_content"

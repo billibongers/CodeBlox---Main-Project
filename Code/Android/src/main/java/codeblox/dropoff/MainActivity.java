@@ -21,7 +21,7 @@ import java.net.Socket;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
-    String vidAddress = "";
+    String movieurl = "";
     String camIP="";    String serverip="192.168.1.149";
     String piIP="";
     String pinDia="";
@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     int p=0;
     String tempIn="N/a";
     Client myClient ;
+    Uri vidUri;
+    VideoView vidView ;
 
     //Connection to server that runs when the application is started
     public MainActivity() {
@@ -138,18 +140,29 @@ public class MainActivity extends AppCompatActivity {
                 //Get TExt
                 EditText IP = (EditText)dialog.findViewById(R.id.IP);
                 EditText RBPIP = (EditText)dialog.findViewById(R.id.RBPIP);
-                vidAddress = IP.getText().toString().trim();
+                movieurl = IP.getText().toString().trim();
                  piIP = RBPIP.getText().toString().trim();
 
                 System.out.println("RBP "+RBPIP.getText().toString().trim()+"   Cam "+ IP.getText().toString().trim());
-               serverip=vidAddress ;
+             //  serverip=vidAddress ;
+                 movieurl ="rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov";// "rtsp://192.168.1.145:8554/";//"https://archive.org/download/ksnn_compilation_master_the_internet/ksnn_compilation_master_the_internet_512kb.mp4";
 
                 //Set up video feed
-                Uri vidUri = Uri.parse(vidAddress);
-                VideoView vidView = (VideoView)findViewById(R.id.myVideo);
+                vidUri = Uri.parse(movieurl);
+            //   vidView = (VideoView)findViewById(R.id.myVideo);
                 //Start Stream
                 vidView.setVideoURI(vidUri);
                 vidView.start();
+
+            //    vidView.setVideoURI(Uri.parse(vidAddress));
+
+            //    vidView.start();
+             //   vidView.requestFocus();
+               // if (movieurl.startsWith("rtsp://")) {
+                   // Intent intent = new Intent(Intent.ACTION_VIEW, vidUri);
+                    //startActivity(intent);
+            //    }
+
 
 
             }
@@ -184,12 +197,11 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.pinBtn://Showing the pin
               //  System.out.println("Pin Please");
-
                 TextView pin = (TextView)PinDialog.findViewById(R.id.pin);
                pin.setText(tempIn);// DISPLAY the message sent from the node server ... this was the get pin button
                 //pin.setText(pinDia);
                 PinDialog.show();
-                vidAddress = piIP;
+                //vidAddress = piIP;
                 return true;
 
 
