@@ -22,9 +22,10 @@
         android:layout_height="fill_parent"
         android:layout_centerInParent="true" />-->
 
-    <SurfaceView
-        android:id="@+id/surfaceView"
+    <ImageView
+        android:id="@+id/imagein"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"/>
 
 </RelativeLayout>
