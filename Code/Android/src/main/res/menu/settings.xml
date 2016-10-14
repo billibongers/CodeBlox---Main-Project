@@ -5,23 +5,23 @@
         tools:context=
             ".MenuExampleActivity" >
         <item
-            android:id="@+id/open"
+            android:id="@+id/reconnect"
             android:orderInCategory="1"
             app:showAsAction="never"
             android:title="I Do NOTHING"/>
         <item
-            android:id="@+id/pinBtn"
+            android:id="@+id/msgBtn"
             android:orderInCategory="2"
             app:showAsAction="never"
             android:title="Get message"/>
         <item
-            android:id="@+id/min"
+            android:id="@+id/dc"
             android:orderInCategory="3"
             app:showAsAction="never"
             android:title="Disconnect"/>
 
         <item
-            android:id="@+id/max"
+            android:id="@+id/open"
             android:orderInCategory="4"
             app:showAsAction="never"
             android:title="Open"/>

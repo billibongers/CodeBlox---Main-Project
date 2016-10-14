@@ -3,18 +3,18 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
     <EditText android:text="UserName"
-        android:id="@+id/IP"
+        android:id="@+id/user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <EditText android:text="Password"
-        android:layout_below="@id/IP"
-        android:id="@+id/RBPIP"
+        android:layout_below="@id/user"
+        android:id="@+id/pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <Button android:id="@+id/Button01"
-        android:layout_below="@id/RBPIP"
+        android:layout_below="@id/pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="OK" />
+        android:text="Connect" />
 </RelativeLayout>
