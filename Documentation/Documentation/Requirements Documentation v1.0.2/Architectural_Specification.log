@@ -1,9 +1,22 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.4.22)  22 OCT 2016 00:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.4.22)  21 OCT 2016 21:56
 entering extended mode
-**./TestingManual.tex
-(TestingManual.tex
+**./Architectural_Specification.tex
+(Architectural_Specification.tex
 LaTeX2e <2015/10/01> patch level 2
 Babel <3.9n> and hyphenation patterns for 69 languages loaded.
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 i
+     \documentclass[a4paper,12pt]{article}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no i in font nullfont!
 ("C:\Users\Rayban\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 ("C:\Users\Rayban\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size12.clo"
@@ -15,17 +28,22 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \c@subsubsection=\count82
 \c@paragraph=\count83
 \c@subparagraph=\count84
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 1--289
+[]
+ []
+
 \c@figure=\count85
 \c@table=\count86
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-)
+[1{C:/Users/Rayban/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}])
 \@indexfile=\write3
-\openout3 = `TestingManual.idx'.
+\openout3 = `Architectural_Specification.idx'.
 
 
-Writing index file TestingManual.idx
+Writing index file Architectural_Specification.idx
 
 ("C:\Users\Rayban\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphicx
 .sty"
@@ -204,8 +222,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip43
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 18.
- (TestingManual.aux)
-\openout1 = `TestingManual.aux'.
+ (Architectural_Specification.aux)
+\openout1 = `Architectural_Specification.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
@@ -264,12 +282,13 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 25.
 LaTeX Info: Redefining \pageref on input line 25.
 LaTeX Info: Redefining \nameref on input line 25.
- (TestingManual.out) (TestingManual.out)
+ (Architectural_Specification.out)
+(Architectural_Specification.out)
 \@outlinefile=\write4
-\openout4 = `TestingManual.out'.
+\openout4 = `Architectural_Specification.out'.
 
 
-<./Pictures/up_logo.png, id=135, 376.40625pt x 112.92188pt>
+<./Pictures/up_logo.png, id=159, 376.40625pt x 112.92188pt>
 File: ./Pictures/up_logo.png Graphic file (type png)
 
 <use ./Pictures/up_logo.png>
@@ -287,8 +306,7 @@ Overfull \hbox (3.0945pt too wide) in paragraph at lines 36--36
 
 [1
 
-{C:/Users/Rayban/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Pictures
-/up_logo.png>] (TestingManual.toc
+ <./Pictures/up_logo.png>] (Architectural_Specification.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 2.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -299,195 +317,93 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.31 ...Test Case 6 (4.6)}{8}{subsubsection.7.2.6}
+l.34 ...berline {1.9}Mongoose}{16}{subsection.1.9}
                                                    [1])
 \tf@toc=\write5
-\openout5 = `TestingManual.toc'.
+\openout5 = `Architectural_Specification.toc'.
 
  [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 82.
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+
+ []
+
+<./Pictures/UML/architectureOverview.jpg, id=213, 497.86pt x 517.935pt>
+File: ./Pictures/UML/architectureOverview.jpg Graphic file (type jpg)
+
+<use ./Pictures/UML/architectureOverview.jpg>
+Package pdftex.def Info: ./Pictures/UML/architectureOverview.jpg used on input 
+line 61.
+(pdftex.def)             Requested size: 446.9055pt x 464.93591pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 61--62
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
+ []
+
+[3 <./Pictures/UML/architectureOverview.jpg>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 77.
 
 ("C:\Users\Rayban\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 82.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 77.
 
-[3] [4]
-Overfull \hbox (35.82916pt too wide) in paragraph at lines 138--138
-[]\OT1/cmr/m/n/12 Feature
+[4] [5] [6] [7] [8] [9] [10]
+Overfull \hbox (2.70187pt too wide) in paragraph at lines 228--229
+\OT1/cmr/m/n/12 need/function. The Mi-cro Ser-vices them-selves will be im-ple-
+mented via Nodejs/Expressjs. 
  []
 
-
-Overfull \hbox (10.36693pt too wide) in paragraph at lines 138--138
-\OT1/cmr/m/n/12 ID| 
+[11]
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+ [12] [13]
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+ [14] [15]
+Overfull \hbox (5.26627pt too wide) in paragraph at lines 380--381
+[]\OT1/cmr/bx/n/12 Caching. \OT1/cmr/m/n/12 En-ti-ties are cached in mem-ory th
+ereby re-duc-ing the load on the database. 
  []
 
-
-Overfull \hbox (3.0295pt too wide) in paragraph at lines 141--141
-[]\OT1/cmr/m/n/12 1| 
- []
-
-
-Overfull \hbox (3.0295pt too wide) in paragraph at lines 142--142
-[]\OT1/cmr/m/n/12 2| 
- []
-
-
-Overfull \hbox (3.0295pt too wide) in paragraph at lines 143--143
-[]\OT1/cmr/m/n/12 3| 
- []
-
-
-Overfull \hbox (3.0295pt too wide) in paragraph at lines 144--144
-[]\OT1/cmr/m/n/12 4| 
- []
-
-
-Overfull \hbox (3.0295pt too wide) in paragraph at lines 145--145
-[]\OT1/cmr/m/n/12 5| 
- []
-
-
-Overfull \hbox (3.0295pt too wide) in paragraph at lines 146--146
-[]\OT1/cmr/m/n/12 6| 
- []
-
-
-Overfull \hbox (62.46436pt too wide) in paragraph at lines 137--148
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 150--155
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--162
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 164--169
-
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 171--181
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 171--181
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 183--188
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 190--199
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 190--199
-
- []
-
-[6]
-Overfull \hbox (61.08322pt too wide) in paragraph at lines 214--215
-\OT1/cmr/m/n/12 tions in the mod-ule lo-cally. The tests are on Github at :http
-s://github.com/billibongers/CodeBlox---
- []
-
-
-Overfull \hbox (59.3712pt too wide) in paragraph at lines 214--215
-\OT1/cmr/m/n/12 Main-Project/tree/master/Code/Interfaces/tests and https://gith
-ub.com/billibongers/CodeBlox---
- []
-
-[7] <./Pictures/1.png, id=207, 1371.1225pt x 770.88pt>
-File: ./Pictures/1.png Graphic file (type png)
- <use ./Pictures/1.png>
-Package pdftex.def Info: ./Pictures/1.png used on input line 258.
-(pdftex.def)             Requested size: 446.9055pt x 251.26231pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 257--259
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 257--259
-
- []
-
-<./Pictures/2.png, id=208, 1371.1225pt x 770.88pt>
-File: ./Pictures/2.png Graphic file (type png)
- <use ./Pictures/2.png>
-Package pdftex.def Info: ./Pictures/2.png used on input line 261.
-(pdftex.def)             Requested size: 446.9055pt x 251.26231pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 260--262
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 260--262
-
- []
-
-[8 <./Pictures/1.png>] <./Pictures/3.png, id=213, 1371.1225pt x 770.88pt>
-File: ./Pictures/3.png Graphic file (type png)
-
-<use ./Pictures/3.png>
-Package pdftex.def Info: ./Pictures/3.png used on input line 263.
-(pdftex.def)             Requested size: 446.9055pt x 251.26231pt.
-
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 263--264
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 263--264
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 263--264
-
- []
-
-[9 <./Pictures/2.png> <./Pictures/3.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 282.
- [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 282.
- (TestingManual.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 282.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 282.
-Package rerunfilecheck Info: File `TestingManual.out' has not changed.
-(rerunfilecheck)             Checksum: 6EF7D6F3F30363CB16DC3C5B8322F553;2260.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 282.
+[16]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 410.
+ [17]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 410.
+ (Architectural_Specification.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 410.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 410.
+Package rerunfilecheck Info: File `Architectural_Specification.out' has not cha
+nged.
+(rerunfilecheck)             Checksum: AF361009E17AA830512346DDF3EF0E45;2885.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 410.
  ) 
 Here is how much of TeX's memory you used:
- 5174 strings out of 493634
- 77954 string characters out of 3134831
- 161527 words of memory out of 3000000
- 8487 multiletter control sequences out of 15000+200000
+ 5183 strings out of 493634
+ 78583 string characters out of 3134831
+ 163517 words of memory out of 3000000
+ 8484 multiletter control sequences out of 15000+200000
  10005 words of font info for 35 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 29i,8n,28p,549b,434s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,6n,29p,521b,446s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Rayban/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
 s/cm/cmbx12.pfb><C:/Users/Rayban/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmcsc10.pfb><C:/Users/Rayban/AppData/Local/Programs/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Rayban/AppData/Local/Prog
 rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on TestingManual.pdf (11 pages, 670909 bytes).
+Output written on Architectural_Specification.pdf (19 pages, 193230 bytes).
 PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
- 45 named destinations out of 1000 (max. 500000)
- 285 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 307 PDF objects out of 1000 (max. 8388607)
+ 57 named destinations out of 1000 (max. 500000)
+ 315 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -56,13 +56,26 @@
 	
 	\newpage
 	\section{Introduction}
-		\subsection{Purpose}
+		\subsection{Purpose for Test}
+			\subsubsection{Reducing bugs in new features}
+			We write new tests as we write new code. We believe that tests do not result in a fully bug proof system, but they drastically reduce the number of bugs as we add new code.
+			
+			\subsubsection{Reducing bugs in existing features}
+			With quality tests in place, adding new features hardly breaks existing features. If a new feature breaks existing functionality, the existing tests fail, which makes it very easy to pinpoint where the errors occurred.
+			
+			\subsubsection{Tests improve design}
+			When writing tests, one is forced to have testable code. We have used a strategy known as TDD(Test driven development) which ensures that you write efficient code that fulfils its basic functionality.
+			
+			\subsubsection{Testing makes development faster}
+			Testing slows you down on a class-by-class basis, however with experience, your overall velocity increases because you need not fear breaking existing code when new features are added. With TDD, we realised that no extra code is written which saves coding hours and increases efficiency.  
+			
+		\subsection{Project Outline}
 		The main objective of this system is to allow a delivery person into a demarcated area of your house when you are not there. You should be able to give access remotely and monitor the delivery person while you they are in the area.
 		
 		This document will demonstrate how the functionality of this system was tested by team codeBlox
 		
 		\subsection{Scope}
-		The scope of this document is structured as follows. The features that are considered for testing are listed in section *INSERT SECTION NUMBER*. Tests that have been identified from the requirements are discussed in detail in section *INSERT SECTION NUMBER* Furthermore, this document outlines the test environment and the risks involved in the testing approaches that will be followed. Assumptions and dependencies of this test plan will also be mentioned. Section*INSERT SECTION NUMBER* outlines, discusses and concludes on the results of the tests, respective
+		The scope of this document is structured as follows. The features that are considered for testing are listed in section 3. Tests that have been identified from the requirements are discussed in detail in section 4. Furthermore, this document outlines the test environment and the risks involved in the testing approaches that will be followed. Assumptions and dependencies of this test plan will also be mentioned. Section 7 outlines, discusses and concludes on the results of the tests.
 		
 		\subsection{Test Environment}
 			\begin{itemize}
@@ -121,69 +134,68 @@
 		\end{itemize}
 		
 		
-		\begin{tabular}{c c c c}
+		\begin{tabular}{p{0.1cm}c c c c}
 			Feature ID & RDS source & Summary & Test Case ID\\ [0.5ex]
 			\hline
 			
-			1 & server.get('/')& Passed & 001 \\
-			2 & server.post('/registration') & Passed & 002 \\
-			3 & server.get('/returnUser/:email') & Passed & 003 \\
-			4 & newUser.getActivationStatus() & Passed & 004 \\
-			5 & newUser.getPin() & Passed & 005 \\
-			6 & newUser.getStaus() & Passed & 006 \\
+			1 & server.get('/')& Testing connection to the server & 001 \\
+			2 & server.post('/registration') & Persisting new user credentials & 002 \\
+			3 & server.get('/returnUser/:email') & Verify credentials and allow/reject access & 003 \\
+			4 & newUser.getActivationStatus() & Return true or false & 004 \\
+			5 & newUser.getPin() & Get pin for user & 005 \\
+			6 & newUser.getStaus() & Get connection status & 006 \\
 		\end{tabular}
 	\section{Test Cases}
 		\subsection{Test Case 1}
-		Test case 1: connection to server \newline
-		condition: open home page \newline
-		objective: check if the Pi connects to the server \newline
-		Input: web URL \newline
-		Outcome:  200 status \newline
+		\textbf{Test case 1}: connection to server \newline
+		\textbf{Condition}: open home page \newline
+		\textbf{Objective}: check if the Pi connects to the server \newline
+		\textbf{Input}: web URL \newline
+		\textbf{Outcome}:  200 status \newline
 		
 	\subsection{Test Case 2}
-		Test case 2: add user \newline
-		condition:  user should not exist \newline
-		objective: check if user details get persisted to the database
-		Input: first name, last name, id, email, password1, password2 \newline
-		Outcome: 200 status and user added to database \newline
+		\textbf{Test case 2}: add user \newline
+		\textbf{Condition}:  user should not exist \newline
+		\textbf{Objective}: check if user details get persisted to the database\newline
+		\textbf{Input}: first name, last name, id, email, password1, password2 \newline
+		\textbf{Outcome}: 200 status and user added to database \newline
 		
 		\subsection{Test Case 3}
-		Test case 3: getting user email \newline
-		condition:  user should exist \newline
-		objective: check if user info can be accessed \newline  
-		Input: user name \newline
-		Outcome: print user email \newline
+		\textbf{Test case 3}: getting user email \newline
+		\textbf{Condition}:  user should exist \newline
+		\textbf{Objective}: check if user info can be accessed \newline  
+		\textbf{Input}: user name \newline
+		\textbf{Outcome}: print user email \newline
 			
 		\subsection{Test Case 4}
-		Test case 4: user status \newline
-		condition: user should exist and be active \newline
-		objective: check if correct status returned is active \newline
-		Input: end Activation Date \newline
-		Outcome: active \newline
+		\textbf{Test case 4}: user status \newline
+		\textbf{Condition}: user should exist and be active \newline
+		\textbf{Objective}: check if correct status returned is active \newline
+		\textbf{Input}: end Activation Date \newline
+		\textbf{Outcome}: active \newline
 		\newline
-		condition2: user should exist and be inactive \newline
-		objective: check if correct status returned is inactive \newline
-		Input: end Activation Date \newline
-		Outcome: inactive \newline
+		\textbf{Condition 2}: user should exist and be inactive \newline
+		\textbf{Objective}: check if correct status returned is inactive \newline
+		\textbf{Input}: end Activation Date \newline
+		\textbf{Outcome}: inactive \newline
 		
 		\subsection{Test Case 5}
-		Test case 5: generating pin \newline
-		condition: request pin \newline
-		objective: generate pin for the back up system \newline
-		input: getpin() \newline
-		Outcome: 8-digit random pin \newline
+		\textbf{Test case 5}: generating pin \newline
+		\textbf{Condition}: request pin \newline
+		\textbf{Objective}: generate pin for the back up system \newline
+		\textbf{Input}: getpin() \newline
+		\textbf{Outcome}: 8-digit random pin \newline
 		
 		\subsection{Test Case 6}
-		Test case 6: pin status \newline
-		condition: pin has been generated and un-used \newline
-		objective: check if pin has not been used \newline
-		input: getPinStatus() \newline
-		Outcome: un-used \newline
-	
-		condition2: pin has been generated and used
-		objective: check if pin has been used
-		input: getPinStatus()
-		Outcome: used
+		\textbf{Test case 6}: pin status \newline
+		\textbf{Condition}: pin has been generated and un-used \newline
+		\textbf{Objective}: check if pin has not been used \newline
+		\textbf{Input}: getPinStatus() \newline
+		\textbf{Outcome}: un-used \newline \newline
+		\textbf{Condition 2}: pin has been generated and used\newline
+		\textbf{Objective}: check if pin has been used\newline
+		\textbf{Input}: getPinStatus()\newline
+		\textbf{Outcome}: used\newline
 		
 	\section{Item Pass Criteria}
 		\begin{itemize}
@@ -202,39 +214,45 @@
 		Two separate tests were carried out to ensure that everything works. The first set of tests were done over the internet to ensure connection to server and correct communication with the server. The second set of tests, tested the functionality of the individual functions in the module locally. The tests are on Github at :https://github.com/billibongers/CodeBlox---Main-Project/tree/master/Code/Interfaces/tests and https://github.com/billibongers/CodeBlox---Main-Project/tree/master/Code/NodeJs/Services/personModule/test 
 		
 			\subsubsection{Test Case 1 (4.1)}
-			The website opened and the video stream started \newline
-			Result \newline
-			Pass \newline
+				\begin{itemize}
+					\item The website opened and the video stream started
+					\item Result: Pass
+				\end{itemize}
 			
 			\subsubsection{Test Case 2 (4.2)}
-			New user was added to the system \newline
-			server returned status code of 200 \newline
-			Result \newline
-			Pass \newline
+				\begin{itemize}
+					\item New user was added to the system
+					\item server returned status code of 200
+					\item 	Result: Pass
+				\end{itemize}
 			
 			\subsubsection{Test Case 3 (4.3)}
-			User email was returned \newline
-			The data was returned in the correct format \newline
-			Result \newline
-			Pass \newline
+				\begin{itemize}
+					\item User email was returned
+					\item The data was returned in the correct format
+					\item 	Result: Pass
+				\end{itemize}
 			
 			\subsubsection{Test Case 4 (4.4)}
-			condition 1 returned active and condition 2 returned inactive \newline
-			Result \newline
-			Pass \newline
+				\begin{itemize}
+					\item condition 1 returned active and condition 2 returned inactive
+					\item 	Result: Pass
+				\end{itemize}
 			
 			\subsubsection{Test Case 5 (4.5)}
-			Random 8-digit pin was created
-			the pin was returned in the correct format \newline
-			pin was linked to correct user \newline
-			Result \newline
-			Pass \newline
+				\begin{itemize}
+					\item Random 8-digit pin was created
+					the pin was returned in the correct format
+					\item pin was linked to correct user
+					\item 	Result: Pass
+				\end{itemize}
 			
 			\subsubsection{Test Case 6 (4.6)}
-			Condition 1 returned un-used status and condition 2 returned used status \newline
-			Result \newline
-			Pass \newline
-	
+			\begin{itemize}
+				\item Condition 1 returned un-used status and condition 2 returned used status
+				\item 	Result: Pass
+			\end{itemize}
+
 	\section{Other}
 	Picture of running tests \newline
 				\includegraphics[width=1\textwidth]{./Pictures/1.png}\\[1.5cm] \newline
