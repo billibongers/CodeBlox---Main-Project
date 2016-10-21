@@ -4,7 +4,7 @@ var sys = require('sys')
 var exec = require('child_process').exec;
 
 var client = new net.Socket();
-client.connect(1337, '192.168.1.147', function() {
+client.connect(1337, '10.8.0.1', function() {
 	console.log('Connected');
 	client.write('Hello, server! Love, Client.');
 });
@@ -16,11 +16,23 @@ if (data==1)
   function puts(error, stdout, stderr) { sys.puts(stdout) }
   exec("python open.py", puts);
  }
-else
+else if (data==0)
 {
     console.log('Received: A Zero .... ' + data);//Opens pi
      function puts(error, stdout, stderr) { sys.puts(stdout) }
   exec("python close.py", puts);
+    }
+    else if (data==2)
+{
+    console.log('Received: A 2 .... ' + data);//Opens pi
+     function puts(error, stdout, stderr) { sys.puts(stdout) }
+  exec("python clcoff.py", puts);
+    }
+    else if (data==3)
+{
+    console.log('Received: A 3 .... ' + data);//Opens pi
+     function puts(error, stdout, stderr) { sys.puts(stdout) }
+  exec("python opcoff.py", puts);
     }
 });
 
