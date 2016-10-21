@@ -19,4 +19,4 @@ while(true){
 	socket.pipe(socket);
 }});
 
-server.listen(1337, '192.168.1.104');
+server.listen(1337, 'homeautomation.codeblox.co.za');
