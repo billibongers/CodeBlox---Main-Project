@@ -31,4 +31,15 @@
             android:orderInCategory="5"
             app:showAsAction="never"
             android:title="Close"/>
+        <item
+            android:id="@+id/openSw"
+            android:orderInCategory="6"
+            app:showAsAction="never"
+            android:title="Coffee On"/>
+
+        <item
+            android:id="@+id/closeSw"
+            android:orderInCategory="7"
+            app:showAsAction="never"
+            android:title="Coffee Off"/>
 </menu>
