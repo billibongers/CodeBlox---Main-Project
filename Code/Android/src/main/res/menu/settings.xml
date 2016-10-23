@@ -5,41 +5,62 @@
         tools:context=
             ".MenuExampleActivity" >
         <item
-            android:id="@+id/reconnect"
+            android:id="@+id/dc"
             android:orderInCategory="1"
             app:showAsAction="never"
-            android:title="I Do NOTHING"/>
+            android:title="Disconnect"/>
         <item
-            android:id="@+id/msgBtn"
+            android:id="@+id/lastNotifi"
             android:orderInCategory="2"
             app:showAsAction="never"
-            android:title="Get message"/>
+            android:title="View Last Notification"/>
         <item
-            android:id="@+id/dc"
+            android:id="@+id/ioGate"
             android:orderInCategory="3"
             app:showAsAction="never"
-            android:title="Disconnect"/>
-
+            android:title="Open Gate"/>
         <item
-            android:id="@+id/open"
+            android:id="@+id/ioSwitch1"
             android:orderInCategory="4"
             app:showAsAction="never"
-            android:title="Open"/>
-
+            android:title="Switch 1 On"/>
         <item
-            android:id="@+id/close"
+            android:id="@+id/ioSwitch2"
             android:orderInCategory="5"
             app:showAsAction="never"
-            android:title="Close"/>
+            android:title="Switch 2 On"/>
         <item
-            android:id="@+id/openSw"
+            android:id="@+id/ioSwitch3"
             android:orderInCategory="6"
             app:showAsAction="never"
-            android:title="Coffee On"/>
-
+            android:title="Switch 3 On"/>
         <item
-            android:id="@+id/closeSw"
+            android:id="@+id/ioSwitch4"
             android:orderInCategory="7"
             app:showAsAction="never"
-            android:title="Coffee Off"/>
+            android:title="Switch 4 On"/>
+        <item
+            android:id="@+id/ioSwitch5"
+            android:orderInCategory="8"
+            app:showAsAction="never"
+            android:title="Switch 5 On"/>
+        <item
+            android:id="@+id/ioSwitch6"
+            android:orderInCategory="9"
+            app:showAsAction="never"
+            android:title="Switch 6 On"/>
+        <item
+            android:id="@+id/ioSwitch7"
+            android:orderInCategory="10"
+            app:showAsAction="never"
+            android:title="Switch 7 On"/>
+        <item
+            android:id="@+id/ioSwitch8"
+            android:orderInCategory="11"
+            app:showAsAction="never"
+            android:title="Switch 8 On"/>
+
+
+
+
 </menu>
