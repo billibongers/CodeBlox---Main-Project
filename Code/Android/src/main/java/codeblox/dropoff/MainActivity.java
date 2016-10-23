@@ -2,7 +2,6 @@
 package codeblox.dropoff;
 
 import android.annotation.TargetApi;
-import android.app.Activity;
 import android.app.Dialog;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -30,11 +29,15 @@ public class MainActivity extends AppCompatActivity {
     //GLOBAL VARIABLES
     String imageUrl = "http://10.8.0.6/cam.jpg";//Location on the pi that the ip pic is pulled from TODO Ask server to change this?
     String serverip = "10.8.0.1";int port=6663;
-    String username, password;Dialog msgDialog;
+    Dialog msgDialog;
+  //  TextView msg;
+    int[] Buttonstate={0,0,0,0,0,0,0,0,0,0};
+    String username, password;
     String tempIn = "N/a";//Used to a the message from the server to display it
     Client myClient;
     NotificationManager manager;
     Notification myNotication;
+    //MediaPlayer mp = new MediaPlayer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,14 @@ public class MainActivity extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
 
         setUp();//This is the Login Dialog used to connect to different server and pi conbinations of ip address
+        //loading////////////////
+
+        try {
+            ImageView i = (ImageView) findViewById(R.id.imagein);//https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSt-tm41LicaVb8TM0_kGzxV9l6VMwqTXr1Q7whE5Zoxnlbo4iReQ
+            Bitmap bitmap = BitmapFactory.decodeStream((InputStream)new URL("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSt-tm41LicaVb8TM0_kGzxV9l6VMwqTXr1Q7whE5Zoxnlbo4iReQ").getContent());
+            i.setImageBitmap(bitmap);
+        } catch (Exception e) { System.out.println("Exc=" + e);  }
+        ///////////////////////////////////
         setPin();//The Message From the Server to be displayed...Can dispaly error codes
     }
 
@@ -58,8 +69,11 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                msgDialog.dismiss(); }
+                msgDialog.dismiss();
+                manager.cancel(11);
+            }
         });
+      // TextView msg  = (TextView) msgDialog.findViewById(R.id.msg);
     }
 
     public void setUp() {//This is the Login Dialog
@@ -95,7 +109,9 @@ public class MainActivity extends AppCompatActivity {
             public void onMessage(String message) {
                 tempIn = message;
                 NotifiyOnStatusOfServer(tempIn);
-                myClient.send('0');// send message as i recieve a message ... restful i guess :P
+                myClient.send('0');// send message as i recieve a message ... restful i guess :
+                work2();
+              //  msgDialog.show();
             }
             @Override
             public void onConnect(Socket socket) { myClient.send('1');}
@@ -115,43 +131,151 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         switch (item.getItemId()) {
-            case R.id.open:
-                myClient.send('2');// send an open message to the server
-       //         loadImages(); //Reload Image
+            case R.id.ioGate:
+                if (Buttonstate[0]==0)
+                {
+                myClient.send('a');// send an open message to the server
+                    item.setTitle("Close Gate");
+                    Buttonstate[0]=1;
+                     }
+                else {
+                    myClient.send('b');// send a message to the server this is the close message
+                    item.setTitle("Open Gate");
+                    Buttonstate[0]=0;
+                }
                 return true;
-            case R.id.close:
-                myClient.send('3');// send a message to the server this is the close message
-            //   loadImages(); //Reload Image
+            case R.id.ioSwitch1:
+                if (Buttonstate[1]==0)
+                {
+                    myClient.send('c');// send an open message to the server
+                    item.setTitle("Switch 1 0ff");
+                    Buttonstate[1]=1;
+                }
+                else {
+                    myClient.send('d');// send a message to the server this is the close message
+                    item.setTitle("Switch 1 On");
+                    Buttonstate[1]=0;
+                }
                 return true;
-            case R.id.openSw:
-                myClient.send('4');// send an open message to the server
-          //      loadImages(); //Reload Image
+            case R.id.ioSwitch2:
+                if (Buttonstate[2]==0)
+                {
+                    myClient.send('e');// send an open message to the server
+                    item.setTitle("Switch 2 0ff");
+                    Buttonstate[2]=1;
+                }
+                else {
+                    myClient.send('f');// send a message to the server this is the close message
+                    item.setTitle("Switch 2 On");
+                    Buttonstate[2]=0;
+                }
                 return true;
-            case R.id.closeSw:
-                myClient.send('5');// send a message to the server this is the close message
-             //   loadImages(); //Reload Image
+            case R.id.ioSwitch3:
+                if (Buttonstate[3]==0)
+                {
+                    myClient.send('g');// send an open message to the server
+                    item.setTitle("Switch 3 0ff");
+                    Buttonstate[3]=1;
+                }
+                else {
+                    myClient.send('h');// send a message to the server this is the close message
+                    item.setTitle("Switch 3 On");
+                    Buttonstate[3]=0;
+                }
+                return true;
+            case R.id.ioSwitch4:
+                if (Buttonstate[4]==0)
+                {
+                    myClient.send('i');// send an on message to the server
+                    item.setTitle("Switch 4 0ff");
+                    Buttonstate[4]=1;
+                }
+                else {
+                    myClient.send('j');// send a message to the server
+                    item.setTitle("Switch 4 On");
+                    Buttonstate[4]=0;
+                }
+                return true;
+            case R.id.ioSwitch5:
+                if (Buttonstate[5]==0)
+                {
+                    int x=13;
+                    myClient.send('k');// send a message to the server
+                    item.setTitle("Switch 5 0ff");
+                    Buttonstate[5]=1;
+                }
+                else {
+                    int x=12;
+                    myClient.send('l');// send a message to the server
+                    item.setTitle("Switch 5 On");
+                    Buttonstate[5]=0;
+                }
+                return true;
+            case R.id.ioSwitch6:
+                if (Buttonstate[6]==0)
+                {
+                    int x=15;
+                    myClient.send('m');// send a message to the server
+                    item.setTitle("Switch 6 0ff");
+                    Buttonstate[6]=1;
+                }
+                else {
+                    myClient.send('n');// send a message to the server
+                    item.setTitle("Switch 6 On");
+                    Buttonstate[6]=0;
+                }
+                return true;
+            case R.id.ioSwitch7:
+                if (Buttonstate[7]==0)
+                {
+                    myClient.send('o');// send a message to the server
+                    item.setTitle("Switch 7 0ff");
+                    Buttonstate[7]=1;
+                }
+                else {
+
+                    myClient.send('p');// send a message to the server
+                    item.setTitle("Switch 7 On");
+                    Buttonstate[7]=0;
+                }
+                return true;
+            case R.id.ioSwitch8:
+                if (Buttonstate[8]==0)
+                {
+                    myClient.send('q');// send a message to the server
+                    item.setTitle("Switch 8 0ff");
+                    Buttonstate[8]=1;
+                }
+                else {
+                    myClient.send('r');// send a message to the server
+                    item.setTitle("Switch 8 On");
+                    Buttonstate[8]=0;
+                }
                 return true;
 
-            case R.id.dc://disconnect from server
-                myClient.disconnect();
+            case R.id.dc://Showing the Message
 
+                if (Buttonstate[9]==0)
+                {
+                    myClient.disconnect();
+                    item.setTitle("Connect");
+                    Buttonstate[9]=1;
+                }
+                else {
+
+                    myClient.connect();
+                    item.setTitle("Disconnect");
+                    Buttonstate[9]=0;
+                }
                 return true;
-
-            case R.id.msgBtn://Showing the Message
-               TextView msg = (TextView) msgDialog.findViewById(R.id.msg);
+            case R.id.lastNotifi: // Reconnect to the server
+                TextView msg  = (TextView) msgDialog.findViewById(R.id.msg);
                 manager.cancel(11);
                 msg.setText(tempIn);// DISPLAY the message sent from the node server ... this could be used for the pin system
                 msgDialog.show();
-            //   loadImages(); //Reload Image
+                //   loadImages(); //Reload Image
                 return true;
-            case R.id.reconnect: // Reconnect to the server
-
-                myClient.connect();
-              //  loadImages();
-                return true;
-
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -162,24 +286,62 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {int y =0; while (y<10000) { try { Thread.sleep(3000);
                 work(); y++;} catch (InterruptedException e) {
-                System.out.println(""+ e);  }}
+                System.out.println("Temp"+ e);  }}
             }
         };
         thread.start();
     }
+   // private void dindong()//Used to make a notification noise
+  //  {//USed to load the images using a thread
+    //    Thread thread = new Thread() {
+          //  @Override
+      //      public void run() {
+    //            try {
+    //           mp.reset();
+    //                mp.setDataSource("http://www.orangefreesounds.com/wp-content/uploads/2015/08/Doorbell-ding-dong-sound-effect.mp3");
+    //                mp.prepare();
+           //     mp.start();
+    //           // Thread.sleep(15000);
+   //         } catch (Exception e) { System.out.println("Exc=" + e);  }
+    //        }
+    //    };
+   //     thread.start();
+ //   }
 
     public void work(){
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    ImageView i = (ImageView) findViewById(R.id.imagein);
+                    ImageView i = (ImageView) findViewById(R.id.imagein);//https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSt-tm41LicaVb8TM0_kGzxV9l6VMwqTXr1Q7whE5Zoxnlbo4iReQ
                     Bitmap bitmap = BitmapFactory.decodeStream((InputStream)new URL(imageUrl).getContent());
                     i.setImageBitmap(bitmap);
                 } catch (Exception e) { System.out.println("Exc=" + e);  }
             }});
     }
 
+    public void work2(){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(150);
+                   //used to avoid dead lock with the menu closing
+                  //
+                    TextView msg  = (TextView) msgDialog.findViewById(R.id.msg);
+                    msg.setText(tempIn);// DISPLAY the message sent from the node server ... this could be used for the pin system
+                    msgDialog.show();
+                   // Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                   //long[] pattern = {0,600, 400, 200, 400,600};
+                    // Vibrate for 500 milliseconds
+                   // v.vibrate(500);
+                  //  v.vibrate(pattern, -1);
+                  // dindong(); --------------------------------ALllow for sounds ////////////=-------------------------------------------------------------------------------------------------------------
+                 //
+                   // mp.stop();
+                } catch (Exception e) { System.out.println("Exc=" + e);  }
+            }});
+    }
 
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
@@ -202,8 +364,10 @@ public class MainActivity extends AppCompatActivity {
         builder.setNumber(100);
         builder.build();
 
+
         myNotication = builder.getNotification();
         manager.notify(11, myNotication);
+
 
 
                 /*
@@ -220,11 +384,3 @@ public class MainActivity extends AppCompatActivity {
 
 }
 
-class SecActivity extends Activity {//This deals with the notification not sure how to use it :/
-    protected void onCreate(Bundle savedInstanceState) {
-      //  savedInstanceState.
-        MainActivity x=new MainActivity();
-        x.onCreate(savedInstanceState);
-    }
-
-}

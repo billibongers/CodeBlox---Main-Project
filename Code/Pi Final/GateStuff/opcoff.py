@@ -3,5 +3,5 @@ import time
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 GPIO.setup(18,GPIO.OUT)
-print "Gate Open"
+print "OCffee on Open"
 GPIO.output(18,GPIO.HIGH)
