@@ -1,0 +1,23 @@
+\contentsline {section}{\numberline {1}System Overview}{2}{section.1}
+\contentsline {section}{\numberline {2}System Configuration}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Raspberry Pi 3}{2}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Pi Camera}{2}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Central Server}{3}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}PC/Android devices}{3}{subsection.2.4}
+\contentsline {section}{\numberline {3}Installation}{3}{section.3}
+\contentsline {subsection}{\numberline {3.1}Software}{3}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}NodeJs}{3}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}NPM(Node package manager)}{3}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}Installing dependencies}{3}{subsubsection.3.1.3}
+\contentsline {subsubsection}{\numberline {3.1.4}Connecting to private network}{3}{subsubsection.3.1.4}
+\contentsline {subsubsection}{\numberline {3.1.5}Installing application on andorid device}{4}{subsubsection.3.1.5}
+\contentsline {subsubsection}{\numberline {3.1.6}Application Information}{6}{subsubsection.3.1.6}
+\contentsline {subsection}{\numberline {3.2}Hardware}{6}{subsection.3.2}
+\contentsline {section}{\numberline {4}Getting Started}{6}{section.4}
+\contentsline {subsection}{\numberline {4.1}Creating Account}{6}{subsection.4.1}
+\contentsline {section}{\numberline {5}Using the system}{7}{section.5}
+\contentsline {subsection}{\numberline {5.1}Disconnect}{9}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}View Last Notification}{9}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Open gate / Close gate}{9}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Switch 1 On}{9}{subsection.5.4}
+\contentsline {section}{\numberline {6}Troubleshooting}{9}{section.6}
